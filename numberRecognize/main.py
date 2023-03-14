@@ -18,7 +18,7 @@ model = tf.keras.models.Sequential([
   tf.keras.layers.Dense(10, activation='softmax')
 ])
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
-history = model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=10, batch_size=200)
+history = model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=20, batch_size=200)
 
 model.save("myModel")
 
@@ -72,17 +72,17 @@ def classify(input):
 plt.subplot(1, 2, 1)
 plt.plot(history.history['accuracy'])
 plt.plot(history.history['val_accuracy'])
-plt.title('model accuracy')
-plt.ylabel('accuracy')
-plt.xlabel('epoch')
+plt.title('funkcja dokładności')
+plt.ylabel('dokładność')
+plt.xlabel('epoki')
 plt.legend(['train', 'test'], loc='upper left')
 # summarize history for loss
 plt.subplot(1, 2, 2)
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
-plt.title('model loss')
-plt.ylabel('loss')
-plt.xlabel('epoch')
+plt.title('funkcja strat')
+plt.ylabel('straty')
+plt.xlabel('epoki')
 plt.legend(['train', 'test'], loc='upper right')
 plt.show()
 
