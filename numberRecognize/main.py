@@ -1,13 +1,13 @@
 import numpy as np
 import tensorflow as tf
-import keras
+from keras.datasets import mnist
 from matplotlib import pyplot as plt
 from tensorflow.python.ops.confusion_matrix import confusion_matrix
 import seaborn as sn
 
 
-(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
-# normalization color values
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+# normalization color values from 0-255 to 0-1
 x_train = x_train / 255.0,
 x_test = x_test / 255.0
 
