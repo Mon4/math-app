@@ -3,7 +3,7 @@ import tensorflow as tf
 from flask import Flask, jsonify, request
 from image_processing import *
 
-model = tf.keras.models.load_model('..\\myModel')
+model = tf.keras.models.load_model('..\\numberRecognize\\myModel')
 
 
 def prepare_image(img):
