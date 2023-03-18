@@ -5,7 +5,7 @@ import tensorflow as tf
 from flask import Flask, jsonify, request
 from image_processing import *
 
-# model = tf.keras.models.load_model('.\\myModel')
+model = tf.keras.models.load_model('./myModel')
 
 
 def prepare_image(img):
@@ -14,9 +14,8 @@ def prepare_image(img):
 
 
 def predict_result(img):
-    return None
-    # prediction = model.predict(img.reshape(1, 28, 28)).tolist()[0]
-    # return {str(i): prediction[i] for i in range(10)}
+    prediction = model.predict(img.reshape(1, 28, 28)).tolist()[0]
+    return {str(i): prediction[i] for i in range(10)}
 
 
 app = Flask(__name__)
