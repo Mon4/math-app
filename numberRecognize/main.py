@@ -72,7 +72,7 @@ def classify(input):
 plt.subplot(1, 2, 1)
 plt.plot(history.history['accuracy'])
 plt.plot(history.history['val_accuracy'])
-plt.title('funkcja dokładności')
+plt.title('accuracy function')
 plt.ylabel('dokładność')
 plt.xlabel('epoki')
 plt.legend(['train', 'test'], loc='upper left')
