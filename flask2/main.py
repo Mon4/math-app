@@ -1,5 +1,4 @@
 import os
-
 import numpy as np
 import tensorflow as tf
 from flask import Flask, jsonify, request
@@ -12,10 +11,14 @@ def prepare_image(img):
     img = np.array(img)
     return img
 
-
 def predict_result(img):
     prediction = model.predict(img.reshape(1, 28, 28)).tolist()[0]
-    return {str(i): prediction[i] for i in range(10)}
+    # value_when_true if condition else value_when_false
+    p = None
+    for i in range(10):
+        if prediction[i] > 0.5:
+            p = i
+    return p
 
 
 app = Flask(__name__)
@@ -36,7 +39,7 @@ def infer_image():
 
     # Prepare image - format to model
     img = image_processing(img)
-
+    #img.show()
     # Prepare the image - change format to read by computer
     img = prepare_image(img)
 
@@ -53,3 +56,4 @@ def index():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
+

@@ -39,10 +39,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     public void clean (View v){
         PaintView x = findViewById(R.id.paintView);
         x.clearCanvas();
     }
+
+
+
 
     public void send (View v) throws IOException {
         PaintView x = findViewById(R.id.paintView);

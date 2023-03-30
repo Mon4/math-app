@@ -4,7 +4,7 @@ from keras.datasets import mnist
 from matplotlib import pyplot as plt
 from tensorflow.python.ops.confusion_matrix import confusion_matrix
 import seaborn as sn
-
+from PIL import Image
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 # normalization color values from 0-255 to 0-1
@@ -59,10 +59,9 @@ plt.show()
 print("Baseline Error: %.2f%%" % (100-scores[1]*100))
 
 
-def classify(input):
-    prediction = model.predict(input.reshape(1, 28, 28)).tolist()[0]
-    return {str(i): prediction[i] for i in range(10)}
-
+# def classify(input):
+#     prediction = model.predict(input.reshape(1, 28, 28)).tolist()[0]
+#     return {str(i): prediction[i] for i in range(10)}
 
 # # gradio website
 # label = gr.outputs.Label(num_top_classes=3)
@@ -84,6 +83,6 @@ plt.title('funkcja strat')
 plt.ylabel('straty')
 plt.xlabel('epoki')
 plt.legend(['train', 'test'], loc='upper right')
-plt.show()
+#plt.show()
 
 
