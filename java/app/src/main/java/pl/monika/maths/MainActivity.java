@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         //setContentView(paintView);
 
         TextView mTextView = findViewById(R.id.textView);
-        mTextView.setText(Tasks.tasks[0]);
+        mTextView.setText(Tasks.yourTask());
 
         View view = this.getWindow().getDecorView();
         view.setBackgroundColor(Color.GRAY);
