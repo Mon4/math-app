@@ -1,0 +1,22 @@
+x + y
+Ola miała #x cukierków i dostała #y cukierków od babci. Ile cukierków Ola ma teraz?
+x + y - z
+Jaś miał #x groszy, na urodziny dostał #y groszy, na nową zabawkę wydał #z groszy. Ile groszy ma teraz Jaś?
+x + y
+Zosia ma #x złotych. Dostała od taty jeszcze #y zł. Ile pieniędzy ma Zosia?
+x + y
+Na klombie zasadzono #x bratków niebieskich i o #y więcej bratków żółtych. Ile zasadzono żółtych bratków?
+x - y
+W poniedziałek było #x stopni, a w środę o #y stopni mniej. Jaka temperatura była w środę?  
+x + y - z
+Monika ma #x jabłek, zerwała z drzewa jeszcze #y. Wieczorem zjadła #z jabłek. Ile jabłek ma Monika? 
+x * y
+Baton kosztuje #x zł, a czekolada o #y razy więcej. Ile kosztuje czekolada? 
+x * y + z
+Smok Wielomianek kupił: #x kg pomarańczy po #y zł za kg, później jeszcze wydał #z zł na lizaka. Ile pieniędzy wydał Smok tego dnia?
+x * y 
+Stary dąb w królewskim ogrodzie ma magiczną własność. W ciągu dnia drzewo rośnie #x cm, a w nocy #y razy więcej. Ile cm rośnie w nocy? 
+x / y
+Ania ma #x lat. Jej brat Paweł jest #y razy młodszy. Ile lat ma Paweł?
+x / y
+Dziewczynki mają #x lalek, a chłopcy o #y razy mniej piłek. Ile piłek mają chłopcy? 
