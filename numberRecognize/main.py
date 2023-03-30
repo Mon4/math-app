@@ -83,6 +83,6 @@ plt.title('funkcja strat')
 plt.ylabel('straty')
 plt.xlabel('epoki')
 plt.legend(['train', 'test'], loc='upper right')
-#plt.show()
+plt.show()
 
 
