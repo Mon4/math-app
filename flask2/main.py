@@ -39,7 +39,7 @@ def infer_image():
 
     # Prepare image - format to model
     img = image_processing(img)
-    #img.show()
+    img.show()
     # Prepare the image - change format to read by computer
     img = prepare_image(img)
 
