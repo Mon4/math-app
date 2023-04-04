@@ -30,9 +30,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Tasks.init(getResources());
 
-        //PaintView paintView = new PaintView(this);
-        //setContentView(paintView);
-
         TextView mTextView = findViewById(R.id.textView);
         mTextView.setText(Tasks.yourTask());
 
@@ -76,16 +73,22 @@ public class MainActivity extends AppCompatActivity {
                     String str = responseBody.string();
                     Gson g = new Gson();
                     result = g.fromJson(str, NumberResult.class);
+                    if (result.prediction != null) {
+                        runOnUiThread(new Runnable() {
 
-                    for (Map.Entry<String, Integer> entry : result.prediction.entrySet()) {
-                        if (entry.getValue().equals(1)) {
-                            String matchedNumber = entry.getKey();
-                            TextView y = findViewById(R.id.textView2);
-                            y.setText(matchedNumber);
-                            System.out.println(matchedNumber);
+                            @Override
+                            public void run() {
 
-                        }
+                                TextView y = findViewById(R.id.textView2);
+                                y.setText(result.prediction.toString());
+
+                            }
+                        });
+
+                        System.out.println(result.prediction);
                     }
+
+
 
                 }
             }

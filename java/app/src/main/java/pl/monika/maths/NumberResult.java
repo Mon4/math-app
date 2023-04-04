@@ -3,9 +3,9 @@ package pl.monika.maths;
 import java.util.Map;
 
 public class NumberResult {
-    public NumberResult(Map<String, Integer> prediction) {
+    public NumberResult(Integer prediction) {
         this.prediction = prediction;
     }
 
-    public Map<String, Integer> prediction;
+    public Integer prediction;
 }
