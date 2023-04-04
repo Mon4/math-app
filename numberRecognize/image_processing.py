@@ -1,4 +1,5 @@
 from PIL import Image, ImageOps, ImageChops
+from matplotlib import pyplot as plt
 
 
 def trim_borders(image):
@@ -12,7 +13,7 @@ def trim_borders(image):
 
 
 def pad_image(image):
-    return ImageOps.expand(image, border=30, fill='#fff')
+    return ImageOps.expand(image, border=30, fill=0)
 
 
 def to_grayscale(image):
@@ -29,10 +30,19 @@ def resize_image(image):
 
 def image_processing(img):
     img = trim_borders(img)
+
     img = pad_image(img)
+    plt.imshow(img, interpolation='nearest', cmap='binary')
+    plt.show()
     # img = to_grayscale(img)
+
     img = invert_colors(img)
+    plt.imshow(img, interpolation='nearest', cmap='binary')
+    plt.show()
+
     img = resize_image(img)
+    plt.imshow(img, interpolation='nearest', cmap='binary')
+    plt.show()
     return img
 
 # tests

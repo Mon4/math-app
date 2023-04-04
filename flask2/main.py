@@ -13,7 +13,6 @@ def prepare_image(img):
 
 def predict_result(img):
     prediction = model.predict(img.reshape(1, 28, 28)).tolist()[0]
-    # value_when_true if condition else value_when_false
     p = None
     for i in range(10):
         if prediction[i] > 0.5:
