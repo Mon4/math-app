@@ -16,34 +16,56 @@ def predict_result(img):
             p = i
     return p
 
+
+def sort_contours(contours):
+    for ctr in contours:
+        x, y, w, h = cv2.boundingRect(ctr)
+    return 0
+
 def get_digits(img):
-    gray = to_grayscale(img)
-    #gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    plt.imshow(gray, interpolation='nearest')
-    plt.show()
-
+    # gray = to_grayscale(img)
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    # treshholding - binary mask to find where are pixels
     ret, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-
 
     # finding img's contours
     contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
+    # sorting contours to be signed from left to the right - by center of image
+    sorted_contours = sorted(contours, key=lambda ctr: (cv2.boundingRect(ctr)[0]))
+
+
     # create rectangles
     digit_rects = []
-    for contour in contours:
-        x, y, w, h = cv2.boundingRect(contour)
+    for ctr in sorted_contours:
+        x, y, w, h = cv2.boundingRect(ctr)
+        cv2.rectangle(gray, (x, y), (x + w, y + h), (0, 0, 0), 2)  # drawing rectangles
         digit_rects.append((x, y, w, h))
+
+    # drawing contours
+    # cv2.imshow('image', gray_array)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
 
     # for every rect extract digit
     digits = []
     for rect in digit_rects:
         x, y, w, h = rect
-        digit = gray[y:y+h, x:x+w]
-        digit = cv2.resize(digit, (28, 28), interpolation=cv2.INTER_AREA)
-        digits.append(digit)
+        digit = thresh[y:y+h, x:x+w]  # extract
 
-        plt.imshow(digit, interpolation='none')
+        plt.imshow(digit, interpolation='nearest', cmap='gray')
         plt.show()
+
+        digit_img = Image.fromarray(digit)  # cast array to img
+        digit_img = image_processing(digit_img)
+        digit_a = np.array(digit_img) # from Image to array (cv)
+
+        plt.imshow(digit_a, interpolation='nearest', cmap='gray')
+        plt.show()
+
+        digits.append(digit_a)
+
 
     digits_array = []
     for digit in digits:
@@ -52,19 +74,39 @@ def get_digits(img):
         digit = digit.reshape(1, 28, 28, 1)
         digits_array.append(digit)
 
-    result = []
+    return digits_array
+
+
+def recognize_numbers(digits_array):
+    number = []
     for digit in digits_array:
         prediction = predict_result(digit)
-        result.append(prediction)
+        number.append(prediction)
 
-    r = "".join(str(i) for i in result)
-    print(r)
-    return r
+    result = []
+    for n in number:
+        if n is not None:
+            result.append(n)
+        # else:
+        #     result.append(n)
+        #     break
+
+    result = "".join(str(i) for i in result)
+
+
+    print(result)
+    return result
 
 
 # read img
-img = cv2.imread('72.png')
-# plt.imshow(img, interpolation='nearest')
-# #plt.show()
+img2 = cv2.imread('123.png')
+img = Image.open('1234567890.png')
+
+digit_array = get_digits(img2)
 model = tf.keras.models.load_model('./myModel')
-get_digits(img)
+result = recognize_numbers(digit_array)
+
+
+
+#img_array = np.array(img) # from Image to array (cv)
+#img = Image.fromarray(img_array) # from array

@@ -30,7 +30,7 @@ def resize_image(image):
 def image_processing(img):
     img = trim_borders(img)
     img = pad_image(img)
-    img = to_grayscale(img)
+    # img = to_grayscale(img)
     img = invert_colors(img)
     img = resize_image(img)
     return img
