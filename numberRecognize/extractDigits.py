@@ -4,6 +4,8 @@ from PIL import Image
 import tensorflow as tf
 from matplotlib import pyplot as plt
 
+import image_processing
+from image_processing import *
 
 def predict_result(img):
     prediction = model.predict(img.reshape(1, 28, 28)).tolist()[0]
@@ -15,9 +17,10 @@ def predict_result(img):
     return p
 
 def get_digits(img):
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    gray = to_grayscale(img)
+    #gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     plt.imshow(gray, interpolation='nearest')
-    #plt.show()
+    plt.show()
 
     ret, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
 
