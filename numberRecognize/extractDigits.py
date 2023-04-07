@@ -34,7 +34,7 @@ def get_digits(img):
         cv2.rectangle(gray, (x, y), (x + w, y + h), (0, 0, 0), 2)  # drawing rectangles
         digit_rects.append((x, y, w, h))
 
-    # cv2.imshow('image', gray_array) # drawing contours
+    cv2.imshow('image', gray) # drawing contours
 
     digits = []
     for rect in digit_rects:
@@ -43,19 +43,22 @@ def get_digits(img):
 
         plt.imshow(digit, interpolation='nearest', cmap='binary')
         plt.show()
-
+        digits.append(digit)
     return digits 
-    
+
+
 def prep_digits(digits):
-    digit_img = Image.fromarray(digit)  # cast array to img
-    digit_img = image_processing(digit_img)
-    digit_a = np.array(digit_img)  # from Image to array (cv)
+    digits_prep = []
+    for d in digits:
+        digit_img = Image.fromarray(d)  # cast array to img
+        digit_img = image_processing(digit_img)
+        digit_a = np.array(digit_img)  # from Image to array (cv)
 
-    plt.imshow(digit_a, interpolation='nearest', cmap='binary')
-    # plt.show()
+        plt.imshow(digit_a, interpolation='nearest', cmap='binary')
+        # plt.show()
 
-    digits.append(digit_a)
-    return digits
+        digits_prep.append(digit_a)
+    return digits_prep
 
 
 def recognize_numbers(digits_array):
@@ -82,4 +85,4 @@ img = Image.open('1234567890.png')
 digits = get_digits(img2)
 digits = prep_digits(digits)
 model = tf.keras.models.load_model('./myModel')
-result = recognize_numbers(digit_array)
+result = recognize_numbers(digits)
