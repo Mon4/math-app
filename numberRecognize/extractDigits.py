@@ -7,7 +7,7 @@ import image_processing
 from image_processing import *
 
 
-def predict_result(img):
+def predict_result(img, model):
     prediction = model.predict(img.reshape(1, 28, 28)).tolist()[0]
     p = None
     for i in range(10):
@@ -34,15 +34,15 @@ def get_digits(img):
         cv2.rectangle(gray, (x, y), (x + w, y + h), (0, 0, 0), 2)  # drawing rectangles
         digit_rects.append((x, y, w, h))
 
-    cv2.imshow('image', gray) # drawing contours
+    #cv2.imshow('image', gray) # drawing contours
 
     digits = []
     for rect in digit_rects:
         x, y, w, h = rect
         digit = thresh[y:y+h, x:x+w]  # extract
 
-        plt.imshow(digit, interpolation='nearest', cmap='binary')
-        plt.show()
+        # plt.imshow(digit, interpolation='nearest', cmap='binary')
+        # plt.show()
         digits.append(digit)
     return digits 
 
@@ -54,35 +54,49 @@ def prep_digits(digits):
         digit_img = image_processing(digit_img)
         digit_a = np.array(digit_img)  # from Image to array (cv)
 
-        plt.imshow(digit_a, interpolation='nearest', cmap='binary')
+        # plt.imshow(digit_a, interpolation='nearest', cmap='binary')
         # plt.show()
 
         digits_prep.append(digit_a)
     return digits_prep
 
 
-def recognize_numbers(digits_array):
-    number = []
-    for digit in digits_array:
-        prediction = predict_result(digit)
-        number.append(prediction)
+def recognize_numbers(digits_array, model):
+    if len(digits_array) == 0:
+        return None
+    else:
+        number = []
+        for digit in digits_array:
+            prediction = predict_result(digit, model)
+            number.append(prediction)
 
-    result = []
-    for n in number:
-        if n is not None:
-            result.append(n)
+        result = []
+        for n in number:
+            if n is not None:
+                result.append(n)
 
-    result = "".join(str(i) for i in result)
+        result = "".join(str(i) for i in result)
 
+        return result
+
+
+def extractDigits(img):
+    digits = get_digits(img)
+    digits = prep_digits(digits)
+    model = tf.keras.models.load_model('./myModel')
+    result = recognize_numbers(digits, model)
     print(result)
-    return result
 
 
-# read img
-img2 = cv2.imread('./images/1.png')
-img = Image.open('1234567890.png')
+img0 = cv2.imread('./images/456.png')
+img2 = cv2.imread('./images/654.png')
+img4 = cv2.imread('./images/789.png')
+img72 = cv2.imread('./images/987.png')
 
-digits = get_digits(img2)
-digits = prep_digits(digits)
-model = tf.keras.models.load_model('./myModel')
-result = recognize_numbers(digits)
+extractDigits(img0)
+extractDigits(img2)
+extractDigits(img4)
+extractDigits(img72)
+
+
+
