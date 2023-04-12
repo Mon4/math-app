@@ -13,7 +13,7 @@ def trim_borders(image):
 
 
 def pad_image(image):
-    return ImageOps.expand(image, border=30, fill=0)
+    return ImageOps.expand(image, border=50, fill=0) # fill=colors
 
 
 def to_grayscale(image):
@@ -29,20 +29,12 @@ def resize_image(image):
 
 
 def image_processing(img):
+    # img.show()
     img = trim_borders(img)
-
     img = pad_image(img)
-    plt.imshow(img, interpolation='nearest', cmap='binary')
-    plt.show()
-    # img = to_grayscale(img)
-
-    img = invert_colors(img)
-    plt.imshow(img, interpolation='nearest', cmap='binary')
-    plt.show()
-
+    img = to_grayscale(img)
+    #img = invert_colors(img)
     img = resize_image(img)
-    plt.imshow(img, interpolation='nearest', cmap='binary')
-    plt.show()
     return img
 
 # tests

@@ -36,7 +36,7 @@ def image_processing(img):
     return img
 
 # tests
-#img_8 = Image.open('9.png')
-#img2 = image_processing(img_8)
-#img2.show()
+img = Image.open('1.png')
+img2 = image_processing(img)
+img2.show()
 
