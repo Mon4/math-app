@@ -14,19 +14,38 @@ public class Tasks {
         tasks = a.split("\r?\n|\r");
     }
 
-    public static String yourTask(){
-        int min = 0;
-        int max = tasks.length;
-        int r = (int) (Math.random()*(max-min)) + min;
-        int x = randDigit(1);
-        int y = randDigit(1);
-        int z = randDigit(1);
-        String t = tasks[r];
+    public static Task yourTask(){
+        int res;
+        String t = "";
+        String task = "";
+        do  {
+            int min = 0;
+            int max = tasks.length;
+            int r = (int) (Math.random()*(max-min)) + min;
+            int x = randDigit(1);
+            int y = randDigit(1);
+            int z = randDigit(1);
 
-        t = t.replace("x", Integer.toString(x)).replace("y", Integer.toString(y))
-                .replace("z", Integer.toString(z));
-        return t;
+            t = tasks[r];
+
+            task = t.replace("x", Integer.toString(x)).replace("y", Integer.toString(y))
+                    .replace("z", Integer.toString(z));
+
+            if (t.equals("x / y")){
+                int temp = x * y;
+                y = x;
+                x = temp;
+                task = x + " / " + y;
+            }
+
+            res = eval_task(task);
+        } while (res < 0);
+
+        Task ta = new Task (task, res);
+        return ta;
     }
+
+
 
     public static int randDigit(int min){
         int max = 5;
@@ -35,8 +54,8 @@ public class Tasks {
     }
 
 
-    public static String eval_task(String expression) {
-        expression = "3 / 4";
+    public static Integer eval_task(String task) {
+        String expression = task;
         Stack<Integer> stack = new Stack<>();
         int len = expression.length();
         char sign = 0;
@@ -78,7 +97,7 @@ public class Tasks {
                 stack.push(result);
             }
         }
-        return String.valueOf(stackToInt(stack));
+        return stackToInt(stack);
     }
 
     public static int stackToInt(Stack<Integer> stack) {

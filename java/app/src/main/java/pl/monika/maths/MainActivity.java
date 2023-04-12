@@ -33,9 +33,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Tasks.init(getResources());
 
-        TextView mTextView = findViewById(R.id.text_task);
-        task = Tasks.yourTask();
-        mTextView.setText(task);
+        TextView taskTextView = findViewById(R.id.text_task);
+        task = Tasks.yourTask().equation;
+        taskTextView.setText(task + " =");
+
+        TextView resTextView = findViewById(R.id.text_result);
+        resTextView.setText(Tasks.eval_task(task).toString());
 
         View view = this.getWindow().getDecorView();
         view.setBackgroundColor(Color.GRAY);
@@ -92,8 +95,7 @@ public class MainActivity extends AppCompatActivity {
     });
 }
     public void check (View v){
-        TextView mTextView = findViewById(R.id.text_result);
-        mTextView.setText(Tasks.eval_task(task));
+
 
     }
 
