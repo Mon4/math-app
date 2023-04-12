@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     public static final MediaType MEDIA_TYPE_PNG = MediaType.get("image/png; charset=utf-8");
     static OkHttpClient client = new OkHttpClient();
     Task task;
+    private int task_counter = 0;
+    private int good_counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,21 +94,39 @@ public class MainActivity extends AppCompatActivity {
             }
     });
 }
-    public void check (View v){
+    public void check (View v) {
         TextView answerTextView = findViewById(R.id.text_answer);
         String answer = answerTextView.getText().toString();
         TextView resTextView = findViewById(R.id.text_result);
 
 
-        if (Integer.parseInt(answer) == task.result){
-            resTextView.setText("DOBRZE !");}
-        else{resTextView.setText("ŹLE ! POPRAWNA ODP: " + task.result);}
+        if (Integer.parseInt(answer) == task.result) {
+            resTextView.setText("DOBRZE !");
+            good_counter += 1;
+        } else {
+            resTextView.setText("ŹLE ! POPRAWNA ODP: " + task.result);
+        }
     }
 
     public void next (View v) {
-        TextView taskTextView = findViewById(R.id.text_task);
+        TextView taskTV = findViewById(R.id.text_task);
         task = Tasks.yourTask();
         String equation = task.equation;
-        taskTextView.setText(equation + " =");
+        taskTV.setText(equation + " =");
+
+        task_counter += 1;
+        scoreUpdate();
+
+
+        // cleaning
+        TextView answerTV = findViewById(R.id.text_answer);
+        answerTV.setText("answer");
+        TextView resultTV = findViewById(R.id.text_result);
+        resultTV.setText("result");
+    }
+
+    public void scoreUpdate() {
+        TextView scoreTV = findViewById(R.id.text_score);
+        scoreTV.setText("wynik: " + good_counter + "/" + task_counter);
     }
 }
