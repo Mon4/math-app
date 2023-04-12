@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Menu">
+    tools:context=".MenuActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -20,6 +20,7 @@
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="launchToOperations"
             android:text="@string/operations" />
 
         <Button
