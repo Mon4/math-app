@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     Task task;
     private int task_counter = 0;
     private int good_counter = 0;
+    NumberResult answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 try (ResponseBody responseBody = response.body()) {
                     if (!response.isSuccessful())
                         throw new IOException("Unexpected code " + response);
-                    NumberResult answer;
                     String str = responseBody.string();
                     Gson g = new Gson();
                     answer = g.fromJson(str, NumberResult.class);
@@ -90,12 +90,11 @@ public class MainActivity extends AppCompatActivity {
     });
 }
     public void check (View v) {
-        TextView answerTextView = findViewById(R.id.text_answer);
-        String answer = answerTextView.getText().toString();
+//        TextView answerTV = findViewById(R.id.text_answer);
+//        String answer = answerTV.getText().toString();
         TextView resTextView = findViewById(R.id.text_result);
 
-
-        if (Integer.parseInt(answer) == task.result) {
+        if (answer.prediction == task.result) {
             resTextView.setText("DOBRZE !");
             good_counter += 1;
         } else {

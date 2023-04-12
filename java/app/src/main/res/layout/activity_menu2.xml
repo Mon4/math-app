@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuActivity">
+    tools:context=".MenuActivity2">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -17,24 +17,25 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="launchToOperations"
+            android:text="@string/operations" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="launchToAreas"
+            android:text="@string/areas" />
+
+        <Button
             android:id="@+id/btn_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="launchToMode"
-            android:text="@string/start" />
+            android:onClick="launchToText"
+            android:text="@string/text" />
 
-        <Button
-            android:id="@+id/btn_settings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/options" />
-
-        <Button
-            android:id="@+id/btn_exit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="exit"
-            android:text="@string/exit" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

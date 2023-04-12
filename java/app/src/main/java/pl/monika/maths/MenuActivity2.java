@@ -6,26 +6,27 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MenuActivity extends AppCompatActivity {
+public class MenuActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_menu2);
     }
 
-    public void launchToMode(View v){
-        Intent myIntent = new Intent(this, MenuActivity2.class);
+    public void launchToOperations(View v) {
+        Intent myIntent = new Intent(this, MainActivity.class);
         startActivity(myIntent);
     }
 
-    public void launchToSettings(View v){
+    public void launchToAreas(View v){
 //        Intent myIntent = new Intent(this, MainActivity.class);
 //        startActivity(myIntent);
     }
-    public void exit (View v){
-        this.finishAffinity();
-    }
 
+    public void launchToText(View v){
+//        Intent myIntent = new Intent(this, MainActivity.class);
+//        startActivity(myIntent);
+    }
 
 }
