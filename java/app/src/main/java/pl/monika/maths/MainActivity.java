@@ -30,17 +30,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         Tasks.init(getResources());
+
+        View view = this.getWindow().getDecorView();
+        view.setBackgroundColor(Color.GRAY);
 
         TextView taskTextView = findViewById(R.id.text_task);
         task = Tasks.yourTask();
         String equation = task.equation;
         taskTextView.setText(equation + " =");
-
-        View view = this.getWindow().getDecorView();
-        view.setBackgroundColor(Color.GRAY);
-
     }
 
     public void clean (View v){
@@ -100,8 +100,13 @@ public class MainActivity extends AppCompatActivity {
 
         if (Integer.parseInt(answer) == task.result){
             resTextView.setText("DOBRZE !");}
-        else{resTextView.setText("ŹLE, POPRAWNA ODP: " + task.result + " !");}
+        else{resTextView.setText("ŹLE ! POPRAWNA ODP: " + task.result);}
     }
 
-
+    public void next (View v) {
+        TextView taskTextView = findViewById(R.id.text_task);
+        task = Tasks.yourTask();
+        String equation = task.equation;
+        taskTextView.setText(equation + " =");
+    }
 }
