@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Maths</string>
+    <string name="exit">exit</string>
+    <string name="options">options</string>
+    <string name="operations">operations</string>
+    <string name="areas">areas</string>
+    <string name="text">text</string>
+</resources>

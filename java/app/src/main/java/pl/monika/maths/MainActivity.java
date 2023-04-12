@@ -123,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
         answerTV.setText("answer");
         TextView resultTV = findViewById(R.id.text_result);
         resultTV.setText("result");
+
+        clean(v);
     }
 
     public void scoreUpdate() {
