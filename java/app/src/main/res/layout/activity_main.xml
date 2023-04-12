@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Space
-        android:layout_width="50px"
-        android:layout_height="wrap_content" />
-
     <TextView
         android:id="@+id/text_task"
         android:layout_width="wrap_content"
@@ -61,32 +57,37 @@
 
         <Button
             android:id="@+id/btn_clean"
-            android:layout_width="300px"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginBottom="0dp"
+            android:layout_weight="0.25"
             android:onClick="clean"
             android:text="Wyczyść" />
 
         <Space
-            android:layout_width="50px"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.125" />
 
         <Button
             android:id="@+id/btn_send"
-            android:layout_width="300px"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginBottom="0dp"
+            android:layout_weight="0.25"
             android:onClick="send"
             android:text="Wyślij" />
 
         <Space
-            android:layout_width="50px"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.125" />
 
         <Button
             android:id="@+id/btn_check"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="0.25"
             android:onClick="check"
             android:text="Sprawdź" />
     </TableRow>
