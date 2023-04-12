@@ -1,5 +1,8 @@
 package pl.monika.maths;
 import android.content.res.Resources;
+
+import androidx.annotation.NonNull;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Stack;
@@ -100,7 +103,7 @@ public class Tasks {
         return stackToInt(stack);
     }
 
-    public static int stackToInt(Stack<Integer> stack) {
+    public static int stackToInt(@NonNull Stack<Integer> stack) {
         int result = 0;
         int multiplier = 1;
         while (!stack.isEmpty()) {

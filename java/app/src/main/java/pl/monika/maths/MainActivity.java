@@ -25,7 +25,7 @@ import okhttp3.ResponseBody;
 public class MainActivity extends AppCompatActivity {
     public static final MediaType MEDIA_TYPE_PNG = MediaType.get("image/png; charset=utf-8");
     static OkHttpClient client = new OkHttpClient();
-    String task;
+    Task task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +34,9 @@ public class MainActivity extends AppCompatActivity {
         Tasks.init(getResources());
 
         TextView taskTextView = findViewById(R.id.text_task);
-        task = Tasks.yourTask().equation;
-        taskTextView.setText(task + " =");
-
-        TextView resTextView = findViewById(R.id.text_result);
-        resTextView.setText(Tasks.eval_task(task).toString());
+        task = Tasks.yourTask();
+        String equation = task.equation;
+        taskTextView.setText(equation + " =");
 
         View view = this.getWindow().getDecorView();
         view.setBackgroundColor(Color.GRAY);
@@ -71,19 +69,19 @@ public class MainActivity extends AppCompatActivity {
                 try (ResponseBody responseBody = response.body()) {
                     if (!response.isSuccessful())
                         throw new IOException("Unexpected code " + response);
-                    NumberResult result;
+                    NumberResult answer;
                     String str = responseBody.string();
                     Gson g = new Gson();
-                    result = g.fromJson(str, NumberResult.class);
-                    if (result.prediction != null) {
+                    answer = g.fromJson(str, NumberResult.class);
+                    if (answer.prediction != null) {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 TextView y = findViewById(R.id.text_answer);
-                                y.setText(result.prediction.toString());
+                                y.setText(answer.prediction.toString());
                             }
                         });
-                        System.out.println(result.prediction);
+                        System.out.println(answer.prediction);
                     }
                 }
             }
@@ -95,8 +93,14 @@ public class MainActivity extends AppCompatActivity {
     });
 }
     public void check (View v){
+        TextView answerTextView = findViewById(R.id.text_answer);
+        String answer = answerTextView.getText().toString();
+        TextView resTextView = findViewById(R.id.text_result);
 
 
+        if (Integer.parseInt(answer) == task.result){
+            resTextView.setText("DOBRZE !");}
+        else{resTextView.setText("ŹLE, POPRAWNA ODP: " + task.result + " !");}
     }
 
 
