@@ -1,10 +1,8 @@
 package pl.monika.maths;
-
 import android.content.res.Resources;
-
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
+import java.util.Stack;
 
 public class Tasks {
     public static String[] tasks;
@@ -37,6 +35,62 @@ public class Tasks {
     }
 
 
+    public static String eval_task(String expression) {
+        expression = "3 / 4";
+        Stack<Integer> stack = new Stack<>();
+        int len = expression.length();
+        char sign = 0;
+        Integer operand1 = null;
+
+        for (int i = 0; i < len; i++) {
+            char ch = expression.charAt(i);
+
+            if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+                // If the character is a sign
+                sign = ch;
+                operand1 = stackToInt(stack);
+            }
+            else if (Character.isDigit(ch)) {
+                // If the character is a digit
+                stack.push(Character.getNumericValue(ch));
+            }
+
+            if (i == len-1 || ch == ' ' && (sign != 0 && operand1 != null && stack.size() >= 1)){
+                // if there are two numbers and sign between them then eval it
+                int operand2 = stackToInt(stack);
+
+                int result = 0;
+                switch (sign) {
+                    case '+':
+                        result = operand1 + operand2;
+                        break;
+                    case '-':
+                        result = operand1 - operand2;
+                        break;
+                    case '*':
+                        result = operand1 * operand2;
+                        break;
+                    case '/':
+                        result = operand1 / operand2;
+                        break;
+                }
+
+                stack.push(result);
+            }
+        }
+        return String.valueOf(stackToInt(stack));
+    }
+
+    public static int stackToInt(Stack<Integer> stack) {
+        int result = 0;
+        int multiplier = 1;
+        while (!stack.isEmpty()) {
+            int num = stack.pop();
+            result += num * multiplier;
+            multiplier *= 10;
+        }
+        return result;
+    }
 
     public static String readResource(Resources res, int id) {
         InputStream input = res.openRawResource(id);
