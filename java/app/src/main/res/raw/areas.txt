@@ -1,12 +1,12 @@
-(x*y)/2
+x * y / 2
 Policz pole TRÓJKĄTA o podstawie #x i wysokości #y.
-x*x
+x * x
 Policz pole KWADRATU o podstawie #x.
-x*x
+x * x
 Policz pole KOŁA o promieniu #x [pi].
-(x*y)/2
+x * y / 2
 Policz pole ROMBU o długości jednej przekątnej równej #x i drugiej przekątnej równej #y.
-(x*y)/2
+x * y / 2
 Policz pole DELTOIDU o długości pierwszej przekątnej #x i drugiej przekątnej #y.
-x*y
+x * y
 Policz pole PROSTOKĄTU o wymiarach #x i #y.

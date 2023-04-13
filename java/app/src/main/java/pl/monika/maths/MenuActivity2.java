@@ -23,14 +23,16 @@ public class MenuActivity2 extends AppCompatActivity {
         i.putExtra("mode", mode);
 
         startActivity(i);
-
     }
 
     public void launchToAreas(View v){
-        Mode mode = Mode.text;
+        Mode mode = Mode.areas;
         Tasks.init(getResources(), mode);
-//        Intent myIntent = new Intent(this, MainActivity.class);
-//        startActivity(myIntent);
+
+        Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("mode", mode);
+
+        startActivity(i);
     }
 
     public void launchToText(View v){

@@ -90,9 +90,8 @@ public class Tasks {
         } while (result < 0);
 
 
-
         // text mode - changes #x to numbers in questions
-        if(mode.equals(Mode.text)){
+        if(mode.equals(Mode.text) || mode.equals(Mode.areas)){
             String question = task.question;
             question = question.replace("#x", Integer.toString(x))
                     .replace("#y", Integer.toString(y))
