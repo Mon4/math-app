@@ -17,21 +17,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btn_operations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="launchToOperations"
             android:text="@string/operations" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btn_areas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="launchToAreas"
             android:text="@string/areas" />
 
         <Button
-            android:id="@+id/btn_start"
+            android:id="@+id/btn_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="launchToText"

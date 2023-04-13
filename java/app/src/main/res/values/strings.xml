@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Maths</string>
     <string name="exit">wyjście</string>
-    <string name="options">opcje</string>
+    <string name="options">ustawienia</string>
     <string name="operations">działania</string>
     <string name="areas">pola</string>
     <string name="text">tekstowe</string>

@@ -30,14 +30,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        Tasks.init(getResources());
 
         View view = this.getWindow().getDecorView();
         view.setBackgroundColor(Color.GRAY);
 
         TextView taskTextView = findViewById(R.id.text_task);
         task = Tasks.yourTask();
-        String equation = task.equation;
+        String equation = task.operation;
         taskTextView.setText(equation + " =");
     }
 
@@ -105,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     public void next (View v) {
         TextView taskTV = findViewById(R.id.text_task);
         task = Tasks.yourTask();
-        String equation = task.equation;
+        String equation = task.operation;
         taskTV.setText(equation + " =");
 
         task_counter += 1;

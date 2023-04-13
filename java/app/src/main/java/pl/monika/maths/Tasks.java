@@ -5,47 +5,70 @@ import androidx.annotation.NonNull;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class Tasks {
-    public static String[] tasks;
+    public static ArrayList<Task> tasks;
 
-    public static void init(Resources res){
-        // read from file
-        String a = readResource(res, R.raw.operations);
-        // split by end of line
-        tasks = a.split("\r?\n|\r");
+    public static void init(Resources res, String mode){
+        ArrayList<Task> list = new ArrayList<>();
+
+        switch(mode){
+            case "operations":
+                String a = readResource(res, R.raw.operations);
+                String[] lines = a.split("\r?\n|\r");        // split by end of line
+                for (String q : lines){
+                    Task task = new Task();
+                    task.setEquation(q);
+
+                    list.add(task);
+                }
+
+            case "areas":
+                String b = readResource(res, R.raw.areas);
+
+            case "text":
+                String c = readResource(res, R.raw.text);
+
+        }
+        tasks = list;
     }
 
     public static Task yourTask(){
-        int res;
-        String t = "";
-        String task = "";
+        int result;
+        String equation = "";
+        String operation = "";
+        Task task;
+
         do  {
             int min = 0;
-            int max = tasks.length;
+            int max = tasks.size();
             int r = (int) (Math.random()*(max-min)) + min;
             int x = randDigit(1);
             int y = randDigit(1);
             int z = randDigit(1);
 
-            t = tasks[r];
+            task = tasks.get(r);
+            equation = task.equation;
 
-            task = t.replace("x", Integer.toString(x)).replace("y", Integer.toString(y))
+            operation = equation.replace("x", Integer.toString(x)).replace("y", Integer.toString(y))
                     .replace("z", Integer.toString(z));
 
-            if (t.equals("x / y")){
+            if (equation.equals("x / y")){
                 int temp = x * y;
                 y = x;
                 x = temp;
-                task = x + " / " + y;
+                operation = x + " / " + y;
             }
+            //res = tasks.get(r).result;
+            result = eval_task(operation);
+        } while (result < 0);
 
-            res = eval_task(task);
-        } while (res < 0);
+        task.setOperation(operation);
+        task.setResult(result);
 
-        Task ta = new Task (task, res);
-        return ta;
+        return task;
     }
 
 
