@@ -11,59 +11,89 @@ import java.util.Stack;
 public class Tasks {
     public static ArrayList<Task> tasks;
 
-    public static void init(Resources res, String mode){
+    public static void init(Resources res, Mode mode){
         ArrayList<Task> list = new ArrayList<>();
 
         switch(mode){
-            case "operations":
+            case operations:
                 String a = readResource(res, R.raw.operations);
                 String[] lines = a.split("\r?\n|\r");        // split by end of line
                 for (String q : lines){
                     Task task = new Task();
                     task.setEquation(q);
-
                     list.add(task);
+                    break;
                 }
 
-            case "areas":
+            case areas:
                 String b = readResource(res, R.raw.areas);
+                break;
 
-            case "text":
+            case text:
                 String c = readResource(res, R.raw.text);
+                String[] lines3 = c.split("\r?\n|\r");
 
-        }
+                for (int i=0; i<lines3.length; i+=2){
+                    String e = lines3[i];
+                    String q = lines3[i+1];
+                    Task task = new Task();
+                    task.setEquation(e);
+                    task.setQuestion(q);
+                    list.add(task);
+                }
+                break;
+
+            }
         tasks = list;
-    }
+        }
 
-    public static Task yourTask(){
+    public static Task yourTask(Mode mode){
         int result;
         String equation = "";
         String operation = "";
         Task task;
+        int x, y, z;
 
         do  {
             int min = 0;
             int max = tasks.size();
             int r = (int) (Math.random()*(max-min)) + min;
-            int x = randDigit(1);
-            int y = randDigit(1);
-            int z = randDigit(1);
+            x = randDigit(1);
+            y = randDigit(1);
+            z = randDigit(1);
 
             task = tasks.get(r);
             equation = task.equation;
 
-            operation = equation.replace("x", Integer.toString(x)).replace("y", Integer.toString(y))
+            operation = equation.replace("x", Integer.toString(x))
+                    .replace("y", Integer.toString(y))
                     .replace("z", Integer.toString(z));
 
+            // divisible numbers
             if (equation.equals("x / y")){
                 int temp = x * y;
                 y = x;
                 x = temp;
                 operation = x + " / " + y;
             }
-            //res = tasks.get(r).result;
+
             result = eval_task(operation);
         } while (result < 0);
+
+
+
+        // text mode - changes #x to numbers in questions
+        if(mode.equals(Mode.text)){
+            String question = task.question;
+            question = question.replace("#x", Integer.toString(x))
+                    .replace("#y", Integer.toString(y))
+                    .replace("#z", Integer.toString(z));
+            task.setQuestion(question);
+        }
+        // for operations mode - sets operations as question
+        else{
+            task.setQuestion(operation);
+        }
 
         task.setOperation(operation);
         task.setResult(result);

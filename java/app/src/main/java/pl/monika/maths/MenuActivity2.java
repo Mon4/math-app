@@ -17,7 +17,7 @@ public class MenuActivity2 extends AppCompatActivity {
 
     public void launchToOperations(View v) {
         String mode = "operations";
-        Tasks.init(getResources(), mode);
+        Tasks.init(getResources(), Mode.operations);
         Intent myIntent = new Intent(this, MainActivity.class);
         startActivity(myIntent);
 
@@ -31,8 +31,7 @@ public class MenuActivity2 extends AppCompatActivity {
     }
 
     public void launchToText(View v){
-        String mode = "text";
-        //Tasks.init(getResources(), mode);
+        Tasks.init(getResources(), Mode.text);
         Intent myIntent = new Intent(this, MainActivity.class);
         startActivity(myIntent);
     }

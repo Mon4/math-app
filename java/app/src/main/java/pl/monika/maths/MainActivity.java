@@ -24,20 +24,22 @@ public class MainActivity extends AppCompatActivity {
     private int task_counter = 0;
     private int good_counter = 0;
     NumberResult answer;
+    Mode mode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        mode = Mode.text;
         setContentView(R.layout.activity_main);
 
         View view = this.getWindow().getDecorView();
         view.setBackgroundColor(Color.GRAY);
 
         TextView taskTextView = findViewById(R.id.text_task);
-        task = Tasks.yourTask();
-        String equation = task.operation;
-        taskTextView.setText(equation + " =");
+        task = Tasks.yourTask(mode);
+        String question = task.question;
+        taskTextView.setText(question);
     }
 
     public void clean (View v){
@@ -103,9 +105,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void next (View v) {
         TextView taskTV = findViewById(R.id.text_task);
-        task = Tasks.yourTask();
-        String equation = task.operation;
-        taskTV.setText(equation + " =");
+        task = Tasks.yourTask(mode);
+        String question = task.question;
+        taskTV.setText(question);
 
         task_counter += 1;
         scoreUpdate();
