@@ -85,18 +85,20 @@ def extractDigits(img):
     digits = prep_digits(digits)
     model = tf.keras.models.load_model('./myModel')
     result = recognize_numbers(digits, model)
-    print(result)
+    # print(result)
+    return result
 
 
-img0 = cv2.imread('./images/456.png')
-img2 = cv2.imread('./images/654.png')
-img4 = cv2.imread('./images/789.png')
-img72 = cv2.imread('./images/987.png')
 
-extractDigits(img0)
-extractDigits(img2)
-extractDigits(img4)
-extractDigits(img72)
+# img0 = cv2.imread('./images/456.png')
+# img2 = cv2.imread('./images/654.png')
+# img4 = cv2.imread('./images/789.png')
+# img72 = cv2.imread('./images/987.png')
+#
+# extractDigits(img0)
+# extractDigits(img2)
+# extractDigits(img4)
+# extractDigits(img72)
 
 
 

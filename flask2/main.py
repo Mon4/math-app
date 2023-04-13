@@ -1,23 +1,13 @@
 import os
 import numpy as np
-import tensorflow as tf
 from flask import Flask, jsonify, request
 from image_processing import *
-
-model = tf.keras.models.load_model('./myModel')
+from extractDigits import *
 
 
 def prepare_image(img):
     img = np.array(img)
     return img
-
-def predict_result(img):
-    prediction = model.predict(img.reshape(1, 28, 28)).tolist()[0]
-    p = None
-    for i in range(10):
-        if prediction[i] > 0.5:
-            p = i
-    return p
 
 
 app = Flask(__name__)
@@ -35,16 +25,10 @@ def infer_image():
         return
 
     img = Image.open(request.files['file'].stream)
+    img = np.array(img)  # cast from Image to (cv2) img
+    result = extractDigits(img)
 
-    # Prepare image - format to model
-    img = image_processing(img)
-    img.show()
-    # Prepare the image - change format to read by computer
-    img = prepare_image(img)
-
-
-    # Return on a JSON format
-    return jsonify(prediction=predict_result(img))
+    return jsonify(result)  # Return a JSON format
 
 
 @app.route('/', methods=['GET'])
