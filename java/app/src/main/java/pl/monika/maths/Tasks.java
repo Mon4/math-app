@@ -14,18 +14,18 @@ public class Tasks {
     public static void init(Resources res, Mode mode){
         ArrayList<Task> list = new ArrayList<>();
 
-        switch(mode){
-            case operations:
+        switch(mode) {
+            case OPERATIONS:
                 String a = readResource(res, R.raw.operations);
                 String[] lines = a.split("\r?\n|\r");        // split by end of line
-                for (String q : lines){
+                for (String q : lines) {
                     Task task = new Task();
                     task.setEquation(q);
                     list.add(task);
-                    break;
                 }
+                break;
 
-            case areas:
+            case AREAS:
                 String b = readResource(res, R.raw.areas);
                 String[] lines2 = b.split("\r?\n|\r");
 
@@ -39,7 +39,7 @@ public class Tasks {
                 }
                 break;
 
-            case text:
+            case TEXT:
                 String c = readResource(res, R.raw.text);
                 String[] lines3 = c.split("\r?\n|\r");
 
@@ -91,7 +91,7 @@ public class Tasks {
 
 
         // text mode - changes #x to numbers in questions
-        if(mode.equals(Mode.text) || mode.equals(Mode.areas)){
+        if(mode.equals(Mode.TEXT) || mode.equals(Mode.AREAS)){
             String question = task.question;
             question = question.replace("#x", Integer.toString(x))
                     .replace("#y", Integer.toString(y))

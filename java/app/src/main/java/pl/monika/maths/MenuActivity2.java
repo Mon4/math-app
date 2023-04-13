@@ -16,7 +16,7 @@ public class MenuActivity2 extends AppCompatActivity {
     }
 
     public void launchToOperations(View v) {
-        Mode mode = Mode.operations;
+        Mode mode = Mode.OPERATIONS;
         Tasks.init(getResources(), mode);
 
         Intent i = new Intent(this, MainActivity.class);
@@ -26,7 +26,7 @@ public class MenuActivity2 extends AppCompatActivity {
     }
 
     public void launchToAreas(View v){
-        Mode mode = Mode.areas;
+        Mode mode = Mode.AREAS;
         Tasks.init(getResources(), mode);
 
         Intent i = new Intent(this, MainActivity.class);
@@ -36,7 +36,7 @@ public class MenuActivity2 extends AppCompatActivity {
     }
 
     public void launchToText(View v){
-        Mode mode = Mode.text;
+        Mode mode = Mode.TEXT;
         Tasks.init(getResources(), mode);
 
         Intent i = new Intent(this, MainActivity.class);
