@@ -1,12 +1,18 @@
 package pl.monika.maths;
+
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.gson.Gson;
+
 import java.io.IOException;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.MediaType;
@@ -30,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mode = Mode.text;
+        Intent intent = getIntent();
+        mode = (Mode) intent.getSerializableExtra("mode");
         setContentView(R.layout.activity_main);
 
         View view = this.getWindow().getDecorView();

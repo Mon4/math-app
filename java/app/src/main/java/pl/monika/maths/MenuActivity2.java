@@ -16,24 +16,31 @@ public class MenuActivity2 extends AppCompatActivity {
     }
 
     public void launchToOperations(View v) {
-        String mode = "operations";
-        Tasks.init(getResources(), Mode.operations);
-        Intent myIntent = new Intent(this, MainActivity.class);
-        startActivity(myIntent);
+        Mode mode = Mode.operations;
+        Tasks.init(getResources(), mode);
+
+        Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("mode", mode);
+
+        startActivity(i);
 
     }
 
     public void launchToAreas(View v){
-        String mode = "areas";
-
+        Mode mode = Mode.text;
+        Tasks.init(getResources(), mode);
 //        Intent myIntent = new Intent(this, MainActivity.class);
 //        startActivity(myIntent);
     }
 
     public void launchToText(View v){
-        Tasks.init(getResources(), Mode.text);
-        Intent myIntent = new Intent(this, MainActivity.class);
-        startActivity(myIntent);
+        Mode mode = Mode.text;
+        Tasks.init(getResources(), mode);
+
+        Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("mode", mode);
+
+        startActivity(i);
     }
 
 }

@@ -27,6 +27,16 @@ public class Tasks {
 
             case areas:
                 String b = readResource(res, R.raw.areas);
+                String[] lines2 = b.split("\r?\n|\r");
+
+                for (int i=0; i<lines2.length; i+=2){
+                    String e = lines2[i];
+                    String q = lines2[i+1];
+                    Task task = new Task();
+                    task.setEquation(e);
+                    task.setQuestion(q);
+                    list.add(task);
+                }
                 break;
 
             case text:
@@ -42,10 +52,9 @@ public class Tasks {
                     list.add(task);
                 }
                 break;
-
-            }
-        tasks = list;
         }
+    tasks = list;
+    }
 
     public static Task yourTask(Mode mode){
         int result;
