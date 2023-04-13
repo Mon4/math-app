@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">Maths</string>
     <string name="exit">wyjście</string>
-    <string name="options">ustawienia</string>
+    <string name="options">Ustawienia</string>
     <string name="operations">działania</string>
     <string name="areas">pola</string>
     <string name="text">tekstowe</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="start">start</string>
+
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
@@ -21,6 +23,29 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="start">start</string>
+
+
+    <string name="level">Poziom trudności</string>
+    <string name="key_upload_quality">key_upload_quality</string>
+    <string name="level_settings">Poziom trudności</string>
+    <string name="level_description">Zakres wyników. Im trudnieszy poziom tym większe liczby.</string>
+
+    <string name="remind_me_for_bed_time">remind_me_for_bed_time</string>
+    <string name="remind_for_bed_time">Remind me for bed time</string>
+
+
+    <string-array name="levels">
+        <item>łatwy</item>
+        <item>średni</item>
+        <item>trudny</item>
+    </string-array>
+
+    <string-array name="pref_duration">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
 
 </resources>

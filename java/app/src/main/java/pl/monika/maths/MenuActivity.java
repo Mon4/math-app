@@ -20,8 +20,8 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void launchToSettings(View v){
-//        Intent myIntent = new Intent(this, MainActivity.class);
-//        startActivity(myIntent);
+        Intent myIntent = new Intent(this, SettingsActivity.class);
+        startActivity(myIntent);
     }
     public void exit (View v){
         this.finishAffinity();

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="General">
+        <!--in below line we are creating a list preference
+            and we are adding default selected value in list for 3 rd index-->
+        <!--dialog title is to set title for our dialog box
+            entries is used to add list of data which we
+            are adding from our strings file
+            entry values is to add values to our entries.
+            key is use to add key to our list preferences
+            summary is use to add description to our option
+            title is use to add title to our list preferences.-->
+
+        <ListPreference
+            android:defaultValue="2"
+            android:dialogTitle="@string/level"
+            android:entries="@array/levels"
+            android:entryValues="@array/pref_duration"
+            android:key="@string/key_upload_quality"
+            android:summary="@string/level_description"
+            android:title="@string/level_settings" />
+
+        <!--switch preference default value is use to set switch on or off
+            key is use to set key
+            title is use to add title to our switch-->
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/remind_me_for_bed_time"
+            android:title="@string/remind_for_bed_time" />
+
+    </PreferenceCategory>
+</PreferenceScreen>
