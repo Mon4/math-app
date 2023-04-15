@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public static final MediaType MEDIA_TYPE_PNG = MediaType.get("image/png; charset=utf-8");
     static OkHttpClient client = new OkHttpClient();
     Task task;
-    private int task_counter = 0;
+    private int task_counter = 1;
     private int good_counter = 0;
     NumberResult answer;
     Mode mode;
@@ -98,16 +98,18 @@ public class MainActivity extends AppCompatActivity {
     });
 }
     public void check (View v) {
-//        TextView answerTV = findViewById(R.id.text_answer);
-//        String answer = answerTV.getText().toString();
-        TextView resTextView = findViewById(R.id.text_result);
+        TextView resultTV = findViewById(R.id.text_result);
 
         if (answer.prediction == task.result) {
-            resTextView.setText("DOBRZE !");
+            resultTV.setTextColor(this.getResources().getColor(R.color.green));
+            resultTV.setText("DOBRZE !");
             good_counter += 1;
         } else {
-            resTextView.setText("ŹLE ! POPRAWNA ODP: " + task.result);
+            resultTV.setTextColor(this.getResources().getColor(R.color.red));
+            resultTV.setText("ŹLE ! POPRAWNA ODP: " + task.result);
         }
+
+        scoreUpdate();
     }
 
     public void next (View v) {
@@ -117,13 +119,12 @@ public class MainActivity extends AppCompatActivity {
         taskTV.setText(question);
 
         task_counter += 1;
-        scoreUpdate();
-
 
         // cleaning
         TextView answerTV = findViewById(R.id.text_answer);
         answerTV.setText("answer");
         TextView resultTV = findViewById(R.id.text_result);
+        resultTV.setTextColor(this.getResources().getColor(R.color.black));
         resultTV.setText("result");
 
         clean(v);
