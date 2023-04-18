@@ -1,7 +1,5 @@
 import os
-import numpy as np
 from flask import Flask, jsonify, request
-from image_processing import *
 from extractDigits import *
 
 

@@ -1,8 +1,6 @@
 import numpy as np
 import cv2
-from PIL import Image
 import tensorflow as tf
-from matplotlib import pyplot as plt
 import image_processing
 from image_processing import *
 

@@ -1,5 +1,4 @@
 from PIL import Image, ImageOps, ImageChops
-from matplotlib import pyplot as plt
 
 
 def trim_borders(image):
