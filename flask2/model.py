@@ -4,7 +4,6 @@ from keras.datasets import mnist
 from matplotlib import pyplot as plt
 from tensorflow.python.ops.confusion_matrix import confusion_matrix
 import seaborn as sn
-from PIL import Image
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 # normalization color values from 0-255 to 0-1
