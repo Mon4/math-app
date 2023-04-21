@@ -1,9 +1,9 @@
 import numpy as np
 import tensorflow as tf
 from keras.datasets import mnist
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
 from tensorflow.python.ops.confusion_matrix import confusion_matrix
-import seaborn as sn
+# import seaborn as sn
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 # normalization color values from 0-255 to 0-1
@@ -27,10 +27,10 @@ scores = model.evaluate(x_test, y_test, verbose=0)
 predicted = model.predict(x_test)
 predicted = np.argmax(predicted, axis=1)
 
-cm = confusion_matrix(y_test, predicted)
-sn.heatmap(cm, cmap='Blues', annot=True, fmt='g')
-plt.title(label="Macierz błędu")
-plt.show()
+# cm = confusion_matrix(y_test, predicted)
+# sn.heatmap(cm, cmap='Blues', annot=True, fmt='g')
+# plt.title(label="Macierz błędu")
+# plt.show()
 
 # FP = confusion_matrix.sum(axis=0) - np.diag(confusion_matrix)
 # FN = confusion_matrix.sum(axis=1) - np.diag(confusion_matrix)
@@ -67,21 +67,21 @@ print("Baseline Error: %.2f%%" % (100-scores[1]*100))
 # interface = gr.Interface(fn=classify, inputs="sketchpad", outputs=label, live=True)
 # interface.launch()
 
-plt.subplot(1, 2, 1)
-plt.plot(history.history['accuracy'])
-plt.plot(history.history['val_accuracy'])
-plt.title('accuracy function')
-plt.ylabel('dokładność')
-plt.xlabel('epoki')
-plt.legend(['train', 'test'], loc='upper left')
-# summarize history for loss
-plt.subplot(1, 2, 2)
-plt.plot(history.history['loss'])
-plt.plot(history.history['val_loss'])
-plt.title('funkcja strat')
-plt.ylabel('straty')
-plt.xlabel('epoki')
-plt.legend(['train', 'test'], loc='upper right')
-plt.show()
+# plt.subplot(1, 2, 1)
+# plt.plot(history.history['accuracy'])
+# plt.plot(history.history['val_accuracy'])
+# plt.title('accuracy function')
+# plt.ylabel('dokładność')
+# plt.xlabel('epoki')
+# plt.legend(['train', 'test'], loc='upper left')
+# # summarize history for loss
+# plt.subplot(1, 2, 2)
+# plt.plot(history.history['loss'])
+# plt.plot(history.history['val_loss'])
+# plt.title('funkcja strat')
+# plt.ylabel('straty')
+# plt.xlabel('epoki')
+# plt.legend(['train', 'test'], loc='upper right')
+# plt.show()
 
 
