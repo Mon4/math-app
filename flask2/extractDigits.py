@@ -5,7 +5,8 @@ import image_processing
 from image_processing import *
 
 
-def predict_result(img, model):
+def predict_result(img):
+    model = tf.keras.models.load_model('./myModel')
     prediction = model.predict(img.reshape(1, 28, 28)).tolist()[0]
     p = None
     for i in range(10):
@@ -59,13 +60,13 @@ def prep_digits(digits):
     return digits_prep
 
 
-def recognize_numbers(digits_array, model):
+def recognize_numbers(digits_array):
     if len(digits_array) == 0:
         return None
     else:
         number = []
         for digit in digits_array:
-            prediction = predict_result(digit, model)
+            prediction = predict_result(digit)
             number.append(prediction)
 
         result = []
@@ -81,8 +82,7 @@ def recognize_numbers(digits_array, model):
 def extractDigits(img):
     digits = get_digits(img)
     digits = prep_digits(digits)
-    model = tf.keras.models.load_model('./myModel')
-    result = recognize_numbers(digits, model)
+    result = recognize_numbers(digits)
     # print(result)
     return result
 
