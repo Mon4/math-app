@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Task task;
     private int task_counter = 1;
     private int good_counter = 0;
-    NumberResult answer;
+    String answer;
     Mode mode;
 
     @Override
@@ -76,17 +76,16 @@ public class MainActivity extends AppCompatActivity {
                     if (!response.isSuccessful())
                         throw new IOException("Unexpected code " + response);
                     String str = responseBody.string();
-                    Gson g = new Gson();
-                    answer = g.fromJson(str, NumberResult.class);
-                    if (answer.prediction != null) {
+                    answer = str.replace("\"", "").replace("\n", "").trim();
+                    if (answer != null) {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 TextView y = findViewById(R.id.text_answer);
-                                y.setText(answer.prediction.toString());
+                                y.setText(answer);
                             }
                         });
-                        System.out.println(answer.prediction);
+                        System.out.println(answer);
                     }
                 }
             }
@@ -100,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     public void check (View v) {
         TextView resultTV = findViewById(R.id.text_result);
 
-        if (answer.prediction == task.result) {
+        if (answer.equals(task.result.toString())) {
             resultTV.setTextColor(this.getResources().getColor(R.color.green));
             resultTV.setText("DOBRZE !");
             good_counter += 1;
