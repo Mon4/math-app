@@ -19,6 +19,8 @@ def infer_image():
 
     file = request.files.get('file')
 
+    file.save(os.path.join(app.root_path, 'static/image.png'))
+
     if not file:
         return
 
