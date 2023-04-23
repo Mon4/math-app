@@ -19,4 +19,4 @@ Stary dąb w królewskim ogrodzie ma magiczną własność. W ciągu dnia drzewo
 x / y
 Ania ma #x lat. Jej brat Paweł jest #y razy młodszy. Ile lat ma Paweł?
 x / y
-Dziewczynki mają #x lalek, a chłopcy o #y razy mniej piłek. Ile piłek mają chłopcy? 
+Dziewczynki mają #x lalek, a chłopcy o #y razy mniej piłek. Ile piłek mają chłopcy?
