@@ -98,15 +98,21 @@ public class MainActivity extends AppCompatActivity {
 }
     public void check (View v) {
         TextView resultTV = findViewById(R.id.text_result);
-
-        if (answer.equals(task.result.toString())) {
-            resultTV.setTextColor(this.getResources().getColor(R.color.green));
-            resultTV.setText("DOBRZE !");
-            good_counter += 1;
-        } else {
-            resultTV.setTextColor(this.getResources().getColor(R.color.red));
-            resultTV.setText("ŹLE ! POPRAWNA ODP: " + task.result);
+        if (answer != null){
+            if (answer.equals(task.result.toString())) {
+                resultTV.setTextColor(this.getResources().getColor(R.color.green));
+                resultTV.setText("DOBRZE !");
+                good_counter += 1;
+            } else {
+                resultTV.setTextColor(this.getResources().getColor(R.color.red));
+                resultTV.setText("ŹLE ! POPRAWNA ODP: " + task.result);
+            }
         }
+        else{
+            resultTV.setTextColor(this.getResources().getColor(R.color.red));
+            resultTV.setText("BRAK ODPOWIEDZI ! POPRAWNA ODP: " + task.result);
+        }
+
 
         scoreUpdate();
     }
