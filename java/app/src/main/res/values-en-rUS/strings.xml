@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Maths for kids</string>
+    <string name="exit">exit</string>
+    <string name="options">options</string>
+    <string name="operations">operations</string>
+    <string name="areas">areas</string>
+    <string name="text">text</string>
+    <string name="level">level</string>
+    <string name="start">start</string>
+    <string name="answer">answer</string>
+    <string name="result">result</string>
+    <string name="clear">clear</string>
+    <string name="send">send</string>
+    <string name="check">check</string>
+    <string name="next">next</string>
+</resources>

@@ -40,9 +40,6 @@ public class MainActivity extends AppCompatActivity {
         mode = (Mode) intent.getSerializableExtra("mode");
         setContentView(R.layout.activity_main);
 
-        View view = this.getWindow().getDecorView();
-        view.setBackgroundColor(Color.GRAY);
-
         TextView taskTextView = findViewById(R.id.text_task);
         task = Tasks.yourTask(mode);
         String question = task.question;

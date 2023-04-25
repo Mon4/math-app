@@ -6,20 +6,6 @@ public class Task {
     String question;
     Integer result;
 
-//    public Task(String q) {
-//        equation = q;
-//    }
-//
-//    public Task(String e, int res) {
-//        equation = e;
-//        result = res;
-//    }
-//    public Task(String e, String question, int res) {
-//        equation = e;
-//        question = question;
-//        result = res;
-//    }
-
     public void setEquation(String equation) {
         this.equation = equation;
     }
