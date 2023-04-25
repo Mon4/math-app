@@ -63,20 +63,16 @@ public class Tasks {
         Task task;
         int x, y, z;
 
+        int min = 0;
+        int max = tasks.size();
+        int r = (int) (Math.random()*(max-min)) + min;
+        task = tasks.get(r);
+        equation = task.equation;
+
         do  {
-            int min = 0;
-            int max = tasks.size();
-            int r = (int) (Math.random()*(max-min)) + min;
             x = randDigit(1);
             y = randDigit(1);
             z = randDigit(1);
-
-            task = tasks.get(r);
-            equation = task.equation;
-
-            operation = equation.replace("x", Integer.toString(x))
-                    .replace("y", Integer.toString(y))
-                    .replace("z", Integer.toString(z));
 
             // divisible numbers
             if (equation.equals("x / y")){
@@ -85,6 +81,16 @@ public class Tasks {
                 x = temp;
                 operation = x + " / " + y;
             }
+            else if(equation.equals("x * y / 2")){
+                if (x * y % 2 != 0){
+                    x += 1;
+                }
+            }
+
+            operation = equation.replace("x", Integer.toString(x))
+                    .replace("y", Integer.toString(y))
+                    .replace("z", Integer.toString(z));
+
 
             result = eval_task(operation);
         } while (result < 0);
@@ -93,9 +99,11 @@ public class Tasks {
         // text mode - changes #x to numbers in questions
         if(mode.equals(Mode.TEXT) || mode.equals(Mode.AREAS)){
             String question = task.question;
+
             question = question.replace("#x", Integer.toString(x))
                     .replace("#y", Integer.toString(y))
                     .replace("#z", Integer.toString(z));
+
             task.setQuestion(question);
         }
         // for operations mode - sets operations as question
