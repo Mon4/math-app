@@ -16,20 +16,20 @@ Co dalej:
 9. Rozwiązać problem wywalalności się po wciśnięciu sprawdź, gdy puste pole. Dodać ifa, że jeżeli null, to też sprawdza jako źle rozwiązane zadanie +
 10. bug - w liczeniu pola prostokąta +
 11. deasign +
+12. wykres - podział klas mnista, ile jakiej cyfry +
+13. sprawdzić czy dane równe klasy +
     
 
-12. augmentacja - problemy z biblioteką ImageDataGenerator !!!! - głupie dziadostwo!!!
 11. dodatkowe ustawienia - np. z jakiego zakresu liczby/ poziom trudności
 12. Eksport klas z javy
 10. Wybór liczby pytań
 13. wysyłanie gdy kończy się pisać
 14. rozwiazanie problemu z czekaniem na heroku
 
-15. wykres - podział klas mnista, ile jakiej cyfry
-16. sprawdzić czy dane równe klasy
 17. zrobić żeby jak zdjęcia cyfr są dzielone, to żeby dopisaywać więcej pustego pola po bokach, bo tak normalnie mają więcej przestrzeni
 18. zrobić zdjęcie jakie dane trafiają do modelu, potrzebne do worda. Z czarnym tłem
- 
+12. augmentacja - problemy z biblioteką keras - ImageDataGenerator !!!! - głupie dziadostwo!!!
+
 
 
 

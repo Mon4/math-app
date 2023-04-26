@@ -1,8 +1,7 @@
 import numpy as np
 import tensorflow as tf
 from keras.datasets import mnist
-# from matplotlib import pyplot as plt
-from tensorflow.python.ops.confusion_matrix import confusion_matrix
+#from tensorflow.python.ops.confusion_matrix import confusion_matrix
 # import seaborn as sn
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
