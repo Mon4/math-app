@@ -1,0 +1,45 @@
+Co dalej:
+1. Następne pytania + 
+2. Punktacja +
+3. wybór trybów - menu +
+4. menu - settings, exit, start +
+
+1. funkcjonalość 2 trybów - tekstowe +
+2. areas +
+3. settings menu +
+4. Zmiana koloru tekstu przy komentarzu czy dobrze czy źle +
+5. bug - można napisać liczbę, zobaczyć odpowiedź poprawną, wymazać i napisać jeszcze raz, ale dobrą +
+6. bug - przechodzą pytania z areas do operations +
+7. WORD - model heroku/model narysowac +
+
+8. zaktualizowanie modelu/ flaska - żeby czytało liczby - bat - recquirements, tenserflow problemy - KAROLEK !!!! +
+9. Rozwiązać problem wywalalności się po wciśnięciu sprawdź, gdy puste pole. Dodać ifa, że jeżeli null, to też sprawdza jako źle rozwiązane zadanie +
+10. bug - w liczeniu pola prostokąta +
+11. deasign +
+    
+
+12. augmentacja - problemy z biblioteką ImageDataGenerator !!!! - głupie dziadostwo!!!
+11. dodatkowe ustawienia - np. z jakiego zakresu liczby/ poziom trudności
+12. Eksport klas z javy
+10. Wybór liczby pytań
+13. wysyłanie gdy kończy się pisać
+14. rozwiazanie problemu z czekaniem na heroku
+
+15. wykres - podział klas mnista, ile jakiej cyfry
+16. sprawdzić czy dane równe klasy
+17. zrobić żeby jak zdjęcia cyfr są dzielone, to żeby dopisaywać więcej pustego pola po bokach, bo tak normalnie mają więcej przestrzeni
+18. zrobić zdjęcie jakie dane trafiają do modelu, potrzebne do worda. Z czarnym tłem
+ 
+
+
+
+ 
+dodatkowe tryby:
+1. liczby ujemne - konieczność dodania rozpoznawania liczb z minusem - zapytać Basiurki
+2. znajdowanie części całkowitej i reszty z dzielenia - nie trzeba nowych elementów rozpoznawania, tylko kod w javie
+3. kolejność wykonywania działań - nawiasy 
+4. koniecznie zrobić rozpoznawanie minusów
+
+feachery:
+1. statystyki - zapisywanie ile dobrze/wszystkie pytania z roznych kategorii, jaki poziom trudnosci
+2. Ekran do pisania na brudno
