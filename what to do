@@ -18,7 +18,18 @@ Co dalej:
 11. deasign +
 12. wykres - podział klas mnista, ile jakiej cyfry +
 13. sprawdzić czy dane równe klasy +
-    
+
+14. augmentacja - problemy z biblioteką keras - ImageDataGenerator !!!! - głupie dziadostwo!!! +
+15. augmentacja - augment +
+16. zapisywanie wygenerowanego zestawu danych +
+16. augmentacja - inne przekształcenia +
+17. zbadać czy augmentacja ma w ogóle jakiś sens, może trzeba lepiej wytrenować model + 
+18. przerobić kod, tak, żeby dało się wczytywać model z innego pliku, a wykresy z innego +
+19. co to jest baseline error - porównanie modelu z prostym modelem. Model ML powinien mieć mnieszy error niż baseline error +
+20. zmienić proporcje train_data i validation_data +
+
+19. statystyki: confision matrix
+20. statystyki: accuracy, precision, recall
 
 11. dodatkowe ustawienia - np. z jakiego zakresu liczby/ poziom trudności
 12. Eksport klas z javy
@@ -28,7 +39,7 @@ Co dalej:
 
 17. zrobić żeby jak zdjęcia cyfr są dzielone, to żeby dopisaywać więcej pustego pola po bokach, bo tak normalnie mają więcej przestrzeni
 18. zrobić zdjęcie jakie dane trafiają do modelu, potrzebne do worda. Z czarnym tłem
-12. augmentacja - problemy z biblioteką keras - ImageDataGenerator !!!! - głupie dziadostwo!!!
+
 
 
 

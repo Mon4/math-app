@@ -184,3 +184,4 @@ google-services.json
 
 # Android Profiling
 *.hprof
+flask2/mnist_modified.pkl
