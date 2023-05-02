@@ -30,7 +30,19 @@ def confision():
     cm = confusion_matrix(y_test, predicted)
     sn.heatmap(cm, cmap='Blues', annot=True, fmt='g')
     plt.title(label="Macierz błędu")
+    plt.tight_layout()
     plt.show()
+
+
+def stats():
+    scores = model.evaluate(x_test, y_test, verbose=0)
+    predicted = model.predict(x_test)
+    predicted = np.argmax(predicted, axis=1)
+
+    print("Baseline Error: %.2f%%" % (100-scores[1]*100))
+    print("accuracy: %.2f%%" % (scores[1]*100))
+
+    return predicted
 
 
 # reading data
@@ -40,15 +52,9 @@ with open('./trainHistory.pkl', 'rb') as file:
 x_train, y_train, x_test, y_test = read_mnist_modified()
 
 model = tf.keras.models.load_model('./myModel')
-
 # statistics
-scores = model.evaluate(x_test, y_test, verbose=0)
-predicted = model.predict(x_test)
-predicted = np.argmax(predicted, axis=1)
 
-print("Baseline Error: %.2f%%" % (100-scores[1]*100))
-print("accuracy: ", scores[1])
-
+predicted = stats()
 plots()
 confision()
 

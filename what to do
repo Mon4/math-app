@@ -27,9 +27,11 @@ Co dalej:
 18. przerobić kod, tak, żeby dało się wczytywać model z innego pliku, a wykresy z innego +
 19. co to jest baseline error - porównanie modelu z prostym modelem. Model ML powinien mieć mnieszy error niż baseline error +
 20. zmienić proporcje train_data i validation_data +
+21. statystyki: confision matrix +
 
-19. statystyki: confision matrix
 20. statystyki: accuracy, precision, recall
+21. regularyzacja - overfitting
+22. droput - overfitting
 
 11. dodatkowe ustawienia - np. z jakiego zakresu liczby/ poziom trudności
 12. Eksport klas z javy

@@ -29,8 +29,8 @@ def augment(num_row, num_col, num, X_train, Y_train, datagen):
             ax.set_title('Label: {}'.format(int(Y[j])))
 
         for i in range(0, num):
-            if i % 5000 == 0:
-                print(i, ", %.2f%%" % i/num*100)
+            if i % 1000 == 0:
+                print(i, ", %.1f%%" % (i/num*100))
             X_augmented = np.append(X_augmented, [X[i].reshape(28, 28)], axis=0)
             Y_augmented = np.append(Y_augmented, int(Y[i]))
 
@@ -49,11 +49,11 @@ def split_data(X_train, Y_train, X_test, Y_test, split_ratio):
 
 def main_augmentation():
     X_train, Y_train, X_test, Y_test = read_mnist()
-
+    X_train, Y_train, X_test, Y_test = split_data(X_train, Y_train, X_test, Y_test, 0.4)
     # CONSTS
     num_col = 8
     num_row = 1
-    num = 30000  # number of new data
+    num = 20000  # number of new data
     rotation_range_val = 30  # max angle value
     width_shift_val = 0.25
     height_shift_val = 0.25
@@ -75,15 +75,10 @@ def main_augmentation():
     X_train = np.concatenate([X_train, X_augmented], axis=0)
     Y_train = np.append(Y_train, Y_augmented)
 
-    X_train, Y_train, X_test, Y_test = split_data(X_train, Y_train, X_test, Y_test, 0.3)
+    # X_train, Y_train, X_test, Y_test = split_data(X_train, Y_train, X_test, Y_test, 0.3)
 
     save_mnist_modified(X_train, Y_train, X_test, Y_test)
     print("whatever")
 
 
-# main_augmentation()
-X_train, Y_train, X_test, Y_test = read_mnist_modified()
-X_train, Y_train, X_test, Y_test = split_data(X_train, Y_train, X_test, Y_test, 0.3)
-save_mnist_modified(X_train, Y_train, X_test, Y_test)
-print("whatever")
-
+main_augmentation()
