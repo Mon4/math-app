@@ -32,6 +32,7 @@ def confision():
     plt.title(label="Macierz błędu")
     plt.tight_layout()
     plt.show()
+    return cm
 
 
 def stats():
@@ -45,6 +46,22 @@ def stats():
     return predicted
 
 
+def precision():
+    FP = cm.sum(axis=0) - np.diag(cm)
+    FN = cm.sum(axis=1) - np.diag(cm)
+    TP = np.diag(cm)
+    TN = cm.sum() - (FP + FN + TP)
+    # Sensitivity, hit rate, recall, or true positive rate
+    TPR = TP/(TP+FN)
+    # Specificity or true negative rate
+    TNR = TN/(TN+FP)
+    # Precision or positive predictive value
+    PPV = TP/(TP+FP)
+    print("recall: ", TPR)
+    print("specificity: ", TNR)
+    print("precision: ", PPV)
+
+
 # reading data
 with open('./trainHistory.pkl', 'rb') as file:
     history = pickle.load(file)
@@ -56,20 +73,10 @@ model = tf.keras.models.load_model('./myModel')
 
 predicted = stats()
 plots()
-confision()
+cm = confision()
+precision()
 
 
-# FP = confusion_matrix.sum(axis=0) - np.diag(confusion_matrix)
-# FN = confusion_matrix.sum(axis=1) - np.diag(confusion_matrix)
-# TP = np.diag(confusion_matrix)
-# TN = confusion_matrix.values.sum() - (FP + FN + TP)
-#
-# # Sensitivity, hit rate, recall, or true positive rate
-# TPR = TP/(TP+FN)
-# # Specificity or true negative rate
-# TNR = TN/(TN+FP)
-# # Precision or positive predictive value
-# PPV = TP/(TP+FP)
 # # Negative predictive value
 # NPV = TN/(TN+FN)
 # # Fall out or false positive rate
@@ -78,9 +85,6 @@ confision()
 # FNR = FN/(TP+FN)
 # # False discovery rate
 # FDR = FP/(TP+FP)
-#
-# # Overall accuracy
-# ACC = (TP+TN)/(TP+FP+FN+TN)
 
 
 # # gradio website

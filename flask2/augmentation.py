@@ -49,7 +49,7 @@ def split_data(X_train, Y_train, X_test, Y_test, split_ratio):
 
 def main_augmentation():
     X_train, Y_train, X_test, Y_test = read_mnist()
-    X_train, Y_train, X_test, Y_test = split_data(X_train, Y_train, X_test, Y_test, 0.4)
+    X_train, Y_train, X_test, Y_test = split_data(X_train, Y_train, X_test, Y_test, 0.5)
     # CONSTS
     num_col = 8
     num_row = 1
