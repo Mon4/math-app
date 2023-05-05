@@ -38,6 +38,7 @@ Co dalej:
 13. wysyłanie gdy kończy się pisać
 14. rozwiazanie problemu z czekaniem na heroku
 
+16. sprawdzić jaka reprezentacja obrazu w końcu, czy binary czy grayscale - lepiej, żeby było binary
 17. zrobić żeby jak zdjęcia cyfr są dzielone, to żeby dopisaywać więcej pustego pola po bokach, bo tak normalnie mają więcej przestrzeni
 18. zrobić zdjęcie jakie dane trafiają do modelu, potrzebne do worda. Z czarnym tłem
 19. odpalić gradio po preprocessingu
