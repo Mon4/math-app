@@ -3,6 +3,7 @@ import pickle
 from mnist import read_mnist_modified
 from tensorflow import keras
 
+
 def model(x_train, y_train, x_test, y_test):
     # normalization color values from 0-255 to 0-1
     x_train = x_train / 255.0,

@@ -3,13 +3,7 @@ from flask import Flask, jsonify, request
 from extractDigits import *
 
 
-def prepare_image(img):
-    img = np.array(img)
-    return img
-
-
 app = Flask(__name__)
-
 
 @app.route('/predict', methods=['POST'])
 def infer_image():
@@ -26,7 +20,7 @@ def infer_image():
 
     img = Image.open(request.files['file'].stream)
     img = np.array(img)  # cast from Image to (cv2) img
-    result = extractDigits(img)
+    result = extract_digits(img)
 
     return jsonify(result)  # Return a JSON format
 

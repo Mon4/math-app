@@ -30,21 +30,27 @@ Co dalej:
 21. statystyki: confision matrix +
 22. statystyki: accuracy, precision, recall +
 
+23. sprawdzić jaka reprezentacja obrazu w końcu, czy binary czy grayscale - lepiej, żeby było binary +
+24. zrobić żeby jak zdjęcia cyfr są dzielone, to żeby dopisaywać więcej pustego pola po bokach, bo tak normalnie mają więcej przestrzeni
 
 
+JAVA
 11. dodatkowe ustawienia - np. z jakiego zakresu liczby/ poziom trudności
 12. Eksport klas z javy
 10. Wybór liczby pytań
 13. wysyłanie gdy kończy się pisać
 14. rozwiazanie problemu z czekaniem na heroku
 
-16. sprawdzić jaka reprezentacja obrazu w końcu, czy binary czy grayscale - lepiej, żeby było binary
-17. zrobić żeby jak zdjęcia cyfr są dzielone, to żeby dopisaywać więcej pustego pola po bokach, bo tak normalnie mają więcej przestrzeni
+PYTHON
 18. zrobić zdjęcie jakie dane trafiają do modelu, potrzebne do worda. Z czarnym tłem
-19. odpalić gradio po preprocessingu
+19. można w sumie statystyki zrobić za pomocą sklern.metrics.classification_report
+20. dorobienie zestawu danych z 9, takimi, żeby miały ogonki na dole. A nie prostą linię
 
-
-
+WORD
+1. opisać dokładniej MLP
+2. poprawić indeksy
+3. rodział o androidzie
+4. rozdział o modelu
 
  
 dodatkowe tryby:
