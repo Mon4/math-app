@@ -1,7 +1,6 @@
 import numpy as np
 import cv2
 import tensorflow as tf
-from matplotlib import pyplot as plt
 
 import image_processing
 from image_processing import *
@@ -95,8 +94,8 @@ def extract_digits(img):
     return result
 
 
-img = cv2.imread('./images/654.png')  # 1 & 2 dimensions are size of image, 3rd is RGB
-print(extract_digits(img))
+# img = cv2.imread('./images/654.png')  # 1 & 2 dimensions are size of image, 3rd is RGB
+# print(extract_digits(img))
 
 # img2 = cv2.imread('./images/654.png')
 # img4 = cv2.imread('./images/789.png')

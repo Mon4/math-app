@@ -5,6 +5,7 @@ from extractDigits import *
 
 app = Flask(__name__)
 
+
 @app.route('/predict', methods=['POST'])
 def infer_image():
     # Catch the image file from a POST request
