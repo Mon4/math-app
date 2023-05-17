@@ -1,8 +1,11 @@
 package pl.monika.maths;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -12,7 +15,6 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         // to chang the title of our action bar
-        getSupportActionBar().setTitle(R.string.options);
 
         // to check if frame layout is empty or not
         if (findViewById(R.id.idFrameLayout) != null) {
@@ -23,4 +25,5 @@ public class SettingsActivity extends AppCompatActivity {
             getFragmentManager().beginTransaction().add(R.id.idFrameLayout, new SettingsFragment()).commit();
         }
     }
+
 }

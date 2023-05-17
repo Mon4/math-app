@@ -1,6 +1,7 @@
 package pl.monika.maths;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private int good_counter = 0;
     String answer;
     Mode mode;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

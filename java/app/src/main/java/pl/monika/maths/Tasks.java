@@ -1,7 +1,9 @@
 package pl.monika.maths;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 
 import androidx.annotation.NonNull;
+import androidx.preference.PreferenceManager;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -57,6 +59,8 @@ public class Tasks {
     }
 
     public static Task yourTask(Mode mode){
+
+
         int result;
         String equation = "";
         String operation = "";
