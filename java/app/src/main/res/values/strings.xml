@@ -54,4 +54,5 @@
     <string name="check">sprawdź</string>
     <string name="next">następny</string>
     <string name="Background" translatable="false">Background color</string>
+    <string name="points">"liczba punktów: "</string>
 </resources>

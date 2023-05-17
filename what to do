@@ -33,13 +33,19 @@ Co dalej:
 23. sprawdzić jaka reprezentacja obrazu w końcu, czy binary czy grayscale - lepiej, żeby było binary +
 24. zrobić żeby jak zdjęcia cyfr są dzielone, to żeby dopisaywać więcej pustego pola po bokach, bo tak normalnie mają więcej przestrzeni
 
+25. Eksport klas z javy
+26. marginesy przy wyświetlaniu treści zadania
+27. po kliknięciu niech wyświetla się nadal wynik a nie result
+28. zmienić nazwę wynik na liczba punktów
 
 JAVA
 11. dodatkowe ustawienia - np. z jakiego zakresu liczby/ poziom trudności
-12. Eksport klas z javy
+12. problem z niedziałającymi ustawieniami
 10. Wybór liczby pytań
 13. wysyłanie gdy kończy się pisać
 14. rozwiazanie problemu z czekaniem na heroku
+
+
 
 PYTHON
 18. zrobić zdjęcie jakie dane trafiają do modelu, potrzebne do worda. Z czarnym tłem

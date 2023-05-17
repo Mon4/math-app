@@ -124,16 +124,16 @@ public class MainActivity extends AppCompatActivity {
 
         // cleaning
         TextView answerTV = findViewById(R.id.text_answer);
-        answerTV.setText("answer");
+        answerTV.setText(R.string.answer);
         TextView resultTV = findViewById(R.id.text_result);
         resultTV.setTextColor(this.getResources().getColor(R.color.black));
-        resultTV.setText("result");
+        resultTV.setText(R.string.result);
 
         clean(v);
     }
 
     public void scoreUpdate() {
         TextView scoreTV = findViewById(R.id.text_score);
-        scoreTV.setText("wynik: " + good_counter + "/" + task_counter);
+        scoreTV.setText("liczba punktów: " + good_counter + "/" + task_counter);
     }
 }
