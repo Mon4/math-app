@@ -47,11 +47,30 @@ public class MainActivity extends AppCompatActivity {
         task = Tasks.yourTask(mode);
         String question = task.question;
         taskTextView.setText(question);
+
+        warmup();
     }
 
     public void clean (View v){
         PaintView x = findViewById(R.id.paintView);
         x.clearCanvas();
+    }
+
+    public void warmup(){
+        Request request = new Request.Builder()
+                .url("https://guarded-island-03261.herokuapp.com")
+                .get()
+                .build();
+        client.newCall(request).enqueue(new Callback(){
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+            }
+
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+            }
+        });
     }
 
     public void send (View v) throws IOException {

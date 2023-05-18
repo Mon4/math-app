@@ -44,8 +44,23 @@ def sample_mnist():
     plt.show()
 
 
+def before_augmentatio(X_train, Y_train):
+    num_row = 2
+    num_col = 8
+    num = num_row*num_col
+    fig1, axes1 = plt.subplots(num_row, num_col, figsize=(1.5 * num_col, 2 * num_row))
+    for i in range(num):
+        ax = axes1[i // num_col, i % num_col]
+        ax.imshow(X_train[i], cmap='gray_r')
+        ax.set_title('Label: {}'.format(Y_train[i]))
+    plt.tight_layout()
+    plt.show()
+
+
 x_train, y_train, x_test, y_test = read_mnist()
+before_augmentatio(x_train, y_train)
 histogram(y_test, y_train)
 sample_mnist()
+
 
 
