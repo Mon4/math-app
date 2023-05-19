@@ -23,6 +23,7 @@ def plots():
     plt.ylabel('straty')
     plt.xlabel('epoki')
     plt.legend(['train', 'test'], loc='upper right')
+    plt.tight_layout()
     plt.show()
 
 
@@ -30,6 +31,8 @@ def confision():
     cm = confusion_matrix(y_test, predicted)
     sn.heatmap(cm, cmap='Blues', annot=True, fmt='g')
     plt.title(label="Macierz błędu")
+    plt.xlabel("wartości przewidywane")
+    plt.ylabel("wartości prawdziwe")
     plt.tight_layout()
     plt.show()
     return cm
@@ -40,9 +43,7 @@ def stats():
     predicted = model.predict(x_test)
     predicted = np.argmax(predicted, axis=1)
 
-    print("Baseline Error: %.2f%%" % (100-scores[1]*100))
     print("accuracy: %.2f%%" % (scores[1]*100))
-
     return predicted
 
 
@@ -57,9 +58,14 @@ def precision():
     TNR = TN/(TN+FP)
     # Precision or positive predictive value
     PPV = TP/(TP+FP)
-    print("recall: ", TPR)
-    print("specificity: ", TNR)
-    print("precision: ", PPV)
+    print("TP", TP)
+    print("TN", TN)
+    print("FP", FP)
+    print("FN", FN)
+
+    print("recall: ", TPR.round(2))
+    print("specificity: ", TNR.round(2))
+    print("precision: ", PPV.round(2))
 
 
 # reading data
@@ -72,7 +78,7 @@ model = tf.keras.models.load_model('./myModel')
 # statistics
 
 predicted = stats()
-plots()
+# plots()
 cm = confision()
 precision()
 
