@@ -26,9 +26,10 @@
 
 
     <string name="level">Poziom trudności</string>
-    <string name="key_upload_quality" translatable="false">key_upload_quality</string>
+    <string name="difficulty_level_key" translatable="false">difficulty_level_key</string>
     <string name="level_settings" translatable="false">Poziom trudności</string>
     <string name="level_description" translatable="false">Zakres wyników. Im trudnieszy poziom tym większe liczby.</string>
+    <string name="default_pref_value" translatable="false">2</string>>
 
     <string name="remind_me_for_bed_time" translatable="false">remind_me_for_bed_time</string>
     <string name="remind_for_bed_time" translatable="false">Remind me for bed time</string>

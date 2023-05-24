@@ -1,10 +1,7 @@
 package pl.monika.maths;
-import android.content.SharedPreferences;
+import android.content.Context;
 import android.content.res.Resources;
-
 import androidx.annotation.NonNull;
-import androidx.preference.PreferenceManager;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -13,8 +10,9 @@ import java.util.Stack;
 public class Tasks {
     public static ArrayList<Task> tasks;
 
-    public static void init(Resources res, Mode mode){
+    public static void init(Resources res, Context context, Mode mode){
         ArrayList<Task> list = new ArrayList<>();
+        pref(res, context);
 
         switch(mode) {
             case OPERATIONS:
@@ -198,4 +196,8 @@ public class Tasks {
             return null;
         }
     }
+    public static String pref(Resources res, Context context){
+        return Preferences.getDifficulty(res, context);
+    }
+
 }

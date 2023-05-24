@@ -15,6 +15,6 @@ public class SettingsFragment extends PreferenceFragment {
         // below line is used to add preference
         // fragment from our xml folder.
         addPreferencesFromResource(R.xml.preferences);
-
+        
     }
 }

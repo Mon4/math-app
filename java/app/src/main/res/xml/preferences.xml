@@ -12,11 +12,11 @@
             title is use to add title to our list preferences.-->
 
         <ListPreference
-            android:defaultValue="2"
+            android:defaultValue="1"
             android:dialogTitle="@string/level"
             android:entries="@array/levels"
             android:entryValues="@array/pref_duration"
-            android:key="@string/key_upload_quality"
+            android:key="@string/difficulty_level_key"
             android:summary="@string/level_description"
             android:title="@string/level_settings" />
 
