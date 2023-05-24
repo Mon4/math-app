@@ -38,26 +38,27 @@ Co dalej:
 27. po kliknięciu niech wyświetla się nadal wynik a nie result
 28. zmienić nazwę wynik na liczba punktów
 14. rozwiazanie problemu z czekaniem na heroku
+12. problem z niedziałającymi ustawieniami
+18. zrobić zdjęcie jakie dane trafiają do modelu, potrzebne do worda. Z czarnym tłem
+19. można w sumie statystyki zrobić za pomocą sklern.metrics.classification_report
+1. opisać dokładniej MLP
+4. rozdział o modelu 
+
+
+
 
 JAVA
 11. dodatkowe ustawienia - np. z jakiego zakresu liczby/ poziom trudności
-12. problem z niedziałającymi ustawieniami
 10. Wybór liczby pytań
 13. wysyłanie gdy kończy się pisać
-
-
-
+12. zmienić kolor zielonego, gdy odp jest poprawna
 
 PYTHON
-18. zrobić zdjęcie jakie dane trafiają do modelu, potrzebne do worda. Z czarnym tłem
-19. można w sumie statystyki zrobić za pomocą sklern.metrics.classification_report
-
+być może k-fold validation
 
 WORD
-1. opisać dokładniej MLP
-2. poprawić indeksy
+2. poprawić indeksy i numery obrazków w tekście
 3. rodział o androidzie - Dużo wersji androida, Android - problemy występujące przy wykonywaniu asynchronicznych operacji – wysyłanie na serwer
-4. rozdział o modelu 
 
 
  

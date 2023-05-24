@@ -3,7 +3,7 @@ import numpy as np
 from collections import Counter
 import collections
 from scipy.stats import chisquare
-from mnist import read_mnist
+from mnist import *
 
 
 def histogram(y_test, y_train):
@@ -44,7 +44,7 @@ def sample_mnist():
     plt.show()
 
 
-def before_augmentatio(X_train, Y_train):
+def before_augmentation(X_train, Y_train):
     num_row = 2
     num_col = 8
     num = num_row*num_col
@@ -57,10 +57,11 @@ def before_augmentatio(X_train, Y_train):
     plt.show()
 
 
-x_train, y_train, x_test, y_test = read_mnist()
-before_augmentatio(x_train, y_train)
+# x_train, y_train, x_test, y_test = read_mnist()
+x_train, y_train, x_test, y_test = read_mnist_modified()
+# before_augmentation(x_train, y_train)
 histogram(y_test, y_train)
-sample_mnist()
+# sample_mnist()
 
 
 

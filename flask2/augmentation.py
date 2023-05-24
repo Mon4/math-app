@@ -75,8 +75,6 @@ def main_augmentation():
     X_train = np.concatenate([X_train, X_augmented], axis=0)
     Y_train = np.append(Y_train, Y_augmented)
 
-    # X_train, Y_train, X_test, Y_test = split_data(X_train, Y_train, X_test, Y_test, 0.3)
-
     save_mnist_modified(X_train, Y_train, X_test, Y_test)
     print("whatever")
 
