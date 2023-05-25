@@ -15,4 +15,6 @@
     <string name="check">check</string>
     <string name="next">next</string>
     <string name="points">"number of points: "</string>
+    <string name="draw">Draw</string>
+    <string name="erase">Eraser</string>
 </resources>

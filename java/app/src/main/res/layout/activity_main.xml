@@ -128,4 +128,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btn_draw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/draw"
+        app:layout_constraintBottom_toTopOf="@+id/paintView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_erase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/erase"
+        app:layout_constraintBottom_toTopOf="@+id/paintView"
+        app:layout_constraintStart_toEndOf="@+id/btn_draw" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
