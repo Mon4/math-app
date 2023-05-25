@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         taskTV.setText(question);
 
         task_counter += 1;
-
+        scoreUpdate();
         // cleaning
         TextView answerTV = findViewById(R.id.text_answer);
         answerTV.setText(R.string.answer);

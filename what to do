@@ -43,23 +43,25 @@ Co dalej:
 19. można w sumie statystyki zrobić za pomocą sklern.metrics.classification_report
 1. opisać dokładniej MLP
 4. rozdział o modelu 
+11. dodatkowe ustawienia - np. z jakiego zakresu liczby/ poziom trudności
+12. zmienić kolor zielonego, gdy odp jest poprawna
 
 
 
 
 JAVA
-11. dodatkowe ustawienia - np. z jakiego zakresu liczby/ poziom trudności
 10. Wybór liczby pytań
-13. wysyłanie gdy kończy się pisać
-12. zmienić kolor zielonego, gdy odp jest poprawna
+13. zrobić responsywną czcionkę
+14. ikonki w przyciskach
+15. usuwanie ostatniego elementu
+16. gumka
+17. przy kliknięciu następny - uaktualniaj licznik
 
 PYTHON
-być może k-fold validation
+1. być może k-fold validation
 
 WORD
-2. poprawić indeksy i numery obrazków w tekście
-3. rodział o androidzie - Dużo wersji androida, Android - problemy występujące przy wykonywaniu asynchronicznych operacji – wysyłanie na serwer
-
+1. 3 rozdział xD
 
  
 dodatkowe tryby:
@@ -70,5 +72,5 @@ dodatkowe tryby:
 
 feachery:
 1. statystyki - zapisywanie ile dobrze/wszystkie pytania z roznych kategorii, jaki poziom trudnosci
-2. Ekran do pisania na brudno
-20. dorobienie zestawu danych z 9, takimi, żeby miały ogonki na dole. A nie prostą linię
+20. dorobienie zestawu danych z 9 i jedynek, takimi, żeby miały ogonki na dole. A nie prostą linię
+2. Ekran do pisania na brudno / wysyłanie gdy kończy się pisać

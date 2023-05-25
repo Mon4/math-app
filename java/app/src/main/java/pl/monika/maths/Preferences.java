@@ -13,7 +13,6 @@ public class Preferences {
         String[] a = res.getStringArray(R.array.levels);
 
         int c = Integer.parseInt(mSharedPreferences.getString("difficulty_level_key", "1"));
-
         String g = a[c];
         return g;
     }

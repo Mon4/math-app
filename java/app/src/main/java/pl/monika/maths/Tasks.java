@@ -9,10 +9,20 @@ import java.util.Stack;
 
 public class Tasks {
     public static ArrayList<Task> tasks;
+    private static String pref;
+
+    public Tasks(String pref) {
+        Tasks.pref = pref;
+    }
+
+    public static void setPref(Resources res, Context context){
+        Tasks.pref = Preferences.getDifficulty(res, context);
+    }
 
     public static void init(Resources res, Context context, Mode mode){
         ArrayList<Task> list = new ArrayList<>();
-        pref(res, context);
+        setPref(res, context);
+
 
         switch(mode) {
             case OPERATIONS:
@@ -57,8 +67,6 @@ public class Tasks {
     }
 
     public static Task yourTask(Mode mode){
-
-
         int result;
         String equation = "";
         String operation = "";
@@ -71,10 +79,13 @@ public class Tasks {
         task = tasks.get(r);
         equation = task.equation;
 
+
+        int max_digit = difficultyLevel(equation);
+
         do  {
-            x = randDigit(1);
-            y = randDigit(1);
-            z = randDigit(1);
+            x = randDigit(1, max_digit);
+            y = randDigit(1, max_digit);
+            z = randDigit(1, max_digit);
 
             // divisible numbers
             if (equation.equals("x / y")){
@@ -121,10 +132,46 @@ public class Tasks {
 
 
 
-    public static int randDigit(int min){
-        int max = 5;
+    public static int randDigit(int min, int max){
         int x = (int) (Math.random()*(max-min)) + min;
         return x;
+    }
+
+    public static int difficultyLevel(String equation){
+        int max = 0;
+
+        boolean containsStar = equation.contains("*");
+        boolean containsSlash = equation.contains("/");
+
+        // cases containing multiplying or dividing
+        if (containsStar || containsSlash){
+            switch (pref){
+                case "łatwy":
+                    max = 5;
+                    break;
+                case "średni":
+                    max = 10;
+                    break;
+                case "trudny":
+                    max = 20;
+                    break;
+            }
+        }
+        // cases with summing and subbing
+        else{
+            switch (pref){
+                case "łatwy":
+                    max = 10;
+                    break;
+                case "średni":
+                    max = 50;
+                    break;
+                case "trudny":
+                    max = 100;
+                    break;
+            }
+        }
+        return max;
     }
 
 
@@ -196,8 +243,4 @@ public class Tasks {
             return null;
         }
     }
-    public static String pref(Resources res, Context context){
-        return Preferences.getDifficulty(res, context);
-    }
-
 }
