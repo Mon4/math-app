@@ -45,6 +45,7 @@ Co dalej:
 4. rozdział o modelu 
 11. dodatkowe ustawienia - np. z jakiego zakresu liczby/ poziom trudności
 12. zmienić kolor zielonego, gdy odp jest poprawna
+17. przy kliknięciu następny - uaktualniaj licznik
 
 
 
@@ -53,9 +54,11 @@ JAVA
 10. Wybór liczby pytań
 13. zrobić responsywną czcionkę
 14. ikonki w przyciskach
-15. usuwanie ostatniego elementu
-16. gumka
-17. przy kliknięciu następny - uaktualniaj licznik
+15. zrobić responsywny guzik "next" i paintview
+
+
+dodać sprawdzenie - jak po wysłaniu jest null, to komunikat o braku odpowiedzi
+
 
 PYTHON
 1. być może k-fold validation
@@ -74,3 +77,5 @@ feachery:
 1. statystyki - zapisywanie ile dobrze/wszystkie pytania z roznych kategorii, jaki poziom trudnosci
 20. dorobienie zestawu danych z 9 i jedynek, takimi, żeby miały ogonki na dole. A nie prostą linię
 2. Ekran do pisania na brudno / wysyłanie gdy kończy się pisać
+16. gumka
+15. usuwanie ostatniego elementu
