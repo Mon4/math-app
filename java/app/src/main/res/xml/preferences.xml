@@ -23,10 +23,6 @@
         <!--switch preference default value is use to set switch on or off
             key is use to set key
             title is use to add title to our switch-->
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="@string/remind_me_for_bed_time"
-            android:title="@string/remind_for_bed_time" />
 
     </PreferenceCategory>
 </PreferenceScreen>
