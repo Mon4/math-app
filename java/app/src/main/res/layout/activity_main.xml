@@ -35,6 +35,7 @@
             android:layout_marginBottom="0dp"
             android:layout_weight="0.25"
             android:onClick="clean"
+            android:drawableBottom="@drawable/ic_clear_white"
             android:text="@string/clear" />
 
         <Space
@@ -49,6 +50,7 @@
             android:layout_marginBottom="0dp"
             android:layout_weight="0.25"
             android:onClick="send"
+            android:drawableBottom="@drawable/ic_send_white"
             android:text="@string/send" />
 
         <Space
@@ -62,6 +64,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:onClick="check"
+            android:drawableBottom="@drawable/ic_check_white"
             android:text="@string/check" />
 
     </TableRow>
@@ -75,12 +78,13 @@
         android:layout_marginBottom="8dp"
         android:onClick="next"
         android:text="@string/next"
+        android:drawableRight="@drawable/ic_arrow_white"
         app:layout_constraintBottom_toTopOf="@+id/paintView"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/text_score"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -113,7 +117,7 @@
             android:paddingRight="16px"
             android:shadowColor="#DAFF1313"
             android:text="task"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <Space
             android:layout_width="match_parent"
@@ -128,7 +132,7 @@
             android:clickable="false"
             android:gravity="center"
             android:text="@string/answer"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <Space
             android:layout_width="match_parent"
@@ -142,7 +146,7 @@
             android:layout_weight="0.2"
             android:gravity="center"
             android:text="@string/result"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

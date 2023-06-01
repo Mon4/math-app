@@ -21,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="launchToMode"
+            android:drawableLeft="@drawable/ic_play"
             android:text="@string/start" />
 
         <Button
@@ -28,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="launchToSettings"
+            android:drawableLeft="@drawable/ic_settings"
             android:text="@string/options" />
 
         <Button
@@ -35,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="exit"
+            android:drawableLeft="@drawable/ic_exit"
             android:text="@string/exit" />
     </LinearLayout>
 

@@ -21,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="launchToOperations"
+            android:drawableLeft="@drawable/ic_operations"
             android:text="@string/operations" />
 
         <Button
@@ -28,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="launchToAreas"
+            android:drawableLeft="@drawable/ic_areas"
             android:text="@string/areas" />
 
         <Button
@@ -35,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="launchToText"
+            android:drawableLeft="@drawable/ic_text"
             android:text="@string/text" />
 
     </LinearLayout>
