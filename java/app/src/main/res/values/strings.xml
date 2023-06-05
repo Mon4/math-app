@@ -3,7 +3,7 @@
     <string name="exit">wyjście</string>
     <string name="options">Ustawienia</string>
     <string name="operations">działania</string>
-    <string name="areas">pola</string>
+    <string name="areas">pola figur</string>
     <string name="text">tekstowe</string>
     <string name="title_activity_settings" translatable="false">SettingsActivity</string>
     <string name="start">start</string>

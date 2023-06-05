@@ -46,25 +46,22 @@ Co dalej:
 11. dodatkowe ustawienia - np. z jakiego zakresu liczby/ poziom trudności
 12. zmienić kolor zielonego, gdy odp jest poprawna
 17. przy kliknięciu następny - uaktualniaj licznik
-
-
+14. ikonki w przyciskach
+15, responsywny paintview
 
 
 JAVA
-10. Wybór liczby pytań
-13. zrobić responsywną czcionkę
-14. ikonki w przyciskach
-15. zrobić responsywny guzik "next" i paintview
+1. RESPONSYWNOŚĆ: czcionkę, guziki, czcionki w guzikach
+2. dodać sprawdzenie - jak po wysłaniu jest null, to komunikat o braku odpowiedzi - bug - sprawdza tylko raz
+3. bug - te zadania na pola z deltoidami i rombami - zmienić system zapobiegania przed dzieleniem nie podzielnych liczb, wstawić w tekst zmienione
 
-
-dodać sprawdzenie - jak po wysłaniu jest null, to komunikat o braku odpowiedzi
 
 
 PYTHON
 1. być może k-fold validation
 
 WORD
-1. 3 rozdział xD
+
 
  
 dodatkowe tryby:
