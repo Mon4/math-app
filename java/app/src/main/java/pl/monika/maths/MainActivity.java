@@ -57,55 +57,58 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void warmup(){
+        // stworzenie zapytania HTTP typu GET oraz wysyłanie go do serwera
         Request request = new Request.Builder()
                 .url("https://guarded-island-03261.herokuapp.com")
                 .get()
                 .build();
+
+        // operacja asynchroniczna
         client.newCall(request).enqueue(new Callback(){
-
             @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-            }
-
+            public void onResponse(@NonNull Call call, @NonNull Response response) {}
             @Override
-            public void onFailure(@NonNull Call call, @NonNull IOException e) {
-            }
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {}
         });
     }
 
-    public void send (View v) throws IOException {
+    public void send (View v){
         PaintView x = findViewById(R.id.paintView);
         byte[] bmp = x.viewToBitmap();
 
+        // stworzenie zawartości przesyłanego zapytania
         RequestBody requestBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
-                .addFormDataPart("file", "logo-square.png",
+                .addFormDataPart("file", "number.png",
                         RequestBody.create(bmp, MEDIA_TYPE_PNG))
                 .build();
 
+        // stworzenie zapytania HTTP typu POST oraz wysyłanie go do serwera
         Request request = new Request.Builder()
                 .url("https://guarded-island-03261.herokuapp.com/predict")
                 .post(requestBody)
                 .build();
 
+        // operacja asynchroniczna
         client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+            public void onResponse(@NonNull Call call, @NonNull Response response)
+                    throws IOException {
                 try (ResponseBody responseBody = response.body()) {
                     if (!response.isSuccessful())
                         throw new IOException("Unexpected code " + response);
                     String str = responseBody.string();
-                    answer = str.replace("\"", "").replace("\n", "").trim();
-                    if (answer != null) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                TextView y = findViewById(R.id.text_answer);
-                                y.setText(answer);
-                            }
-                        });
-                        System.out.println(answer);
-                    }
+                    answer = str.replace("\"", "")
+                            .replace("\n", "").trim();
+
+                    // przekazanie rozpoznanej liczby do interfejsu użytkownika
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            TextView y = findViewById(R.id.text_answer);
+                            y.setText(answer);
+                        }
+                    });
                 }
             }
 

@@ -185,20 +185,19 @@ public class Tasks {
         for (int i = 0; i < len; i++) {
             char ch = expression.charAt(i);
 
+            // Jeżeli znak jest znakiem operacji
             if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
-                // If the character is a sign
                 sign = ch;
-                operand1 = stackToInt(stack);
+                operand1 = stackToInt(stack); // zamienia stos cyfr na jedną liczbę typu int
             }
+            // Jeżeli znak jest cyfrą
             else if (Character.isDigit(ch)) {
-                // If the character is a digit
                 stack.push(Character.getNumericValue(ch));
             }
 
-            if (i == len-1 || ch == ' ' && (sign != 0 && operand1 != null && stack.size() >= 1)){
-                // if there are two numbers and sign between them then eval it
+            // Jeśli są dwie liczby i znak operacji oblicza wynik operacji
+            if (i == len-1 || ch == ' ' && (sign != 0  && stack.size() >= 1)){
                 int operand2 = stackToInt(stack);
-
                 int result = 0;
                 switch (sign) {
                     case '+':
