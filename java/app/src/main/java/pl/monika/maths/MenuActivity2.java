@@ -45,4 +45,15 @@ public class MenuActivity2 extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void launchToInteger(View v){
+        Mode mode = Mode.INTEGER;
+        Tasks.init(getResources(), this, mode);
+
+        Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("mode", mode);
+
+        startActivity(i);
+    }
+
+
 }

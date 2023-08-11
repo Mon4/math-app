@@ -62,75 +62,63 @@ public class Tasks {
                     list.add(task);
                 }
                 break;
+            case INTEGER:
+                break;
         }
     tasks = list;
     }
 
+    private static void divisible(Task task, Vars vars) {
+        if (task.equation.equals("x / y")) {
+            int temp = vars.x * vars.y;
+            vars.y = vars.x;
+            vars.x = temp;
+            task.operation = vars.x + " / " + vars.y;
+        } else if (task.equation.equals("x * y / 2")) {
+            if (vars.x * vars.y % 2 != 0)
+                vars.x += 1;
+        }
+    }
+
     public static Task yourTask(Mode mode){
         int result;
-        String equation = "";
-        String operation = "";
         Task task;
-        int x, y, z;
+        Vars vars = new Vars();
 
         int min = 0;
         int max = tasks.size();
         int r = (int) (Math.random()*(max-min)) + min;
         task = tasks.get(r);
-        equation = task.equation;
 
-
-        int max_digit = difficultyLevel(equation);
+        int max_digit = difficultyLevel(task.equation);
 
         do  {
-            x = randDigit(1, max_digit);
-            y = randDigit(1, max_digit);
-            z = randDigit(1, max_digit);
+            vars.x = randDigit(1, max_digit);
+            vars.y = randDigit(1, max_digit);
+            vars.z = randDigit(1, max_digit);
 
-            // divisible numbers
-            if (equation.equals("x / y")){
-                int temp = x * y;
-                y = x;
-                x = temp;
-                operation = x + " / " + y;
-            }
-            else if(equation.equals("x * y / 2")){
-                if (x * y % 2 != 0){
-                    x += 1;
-                }
-            }
+            divisible(task, vars);
 
-            operation = equation.replace("x", Integer.toString(x))
-                    .replace("y", Integer.toString(y))
-                    .replace("z", Integer.toString(z));
+            task.operation = task.equation.replace("x", Integer.toString(vars.x))
+                    .replace("y", Integer.toString(vars.y))
+                    .replace("z", Integer.toString(vars.z));
 
-
-            result = eval_task(operation);
+            result = eval_task(task.operation);
         } while (result < 0);
-
 
         // text mode - changes #x to numbers in questions
         if(mode.equals(Mode.TEXT) || mode.equals(Mode.AREAS)){
-            String question = task.question;
-
-            question = question.replace("#x", Integer.toString(x))
-                    .replace("#y", Integer.toString(y))
-                    .replace("#z", Integer.toString(z));
-
-            task.setQuestion(question);
+            task.question = task.question.replace("#x", Integer.toString(vars.x))
+                    .replace("#y", Integer.toString(vars.y))
+                    .replace("#z", Integer.toString(vars.z));
         }
         // for operations mode - sets operations as question
-        else{
-            task.setQuestion(operation);
-        }
-
-        task.setOperation(operation);
+        else
+            task.setQuestion(task.operation);
         task.setResult(result);
-
         return task;
     }
-
-
+    
 
     public static int randDigit(int min, int max){
         int x = (int) (Math.random()*(max-min)) + min;

@@ -40,5 +40,11 @@
             android:drawableLeft="@drawable/ic_text"
             android:text="@string/text" />
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cześć całkowita" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
