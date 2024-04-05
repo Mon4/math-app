@@ -1,78 +1,17 @@
-Co dalej:
-1. Następne pytania + 
-2. Punktacja +
-3. wybór trybów - menu +
-4. menu - settings, exit, start +
+What to upgrade:
+1. resolve problem with waiting for heroku
+2. icons in buttons
+3. responsive paintview
+4. add info after sending empty paintview - lack of answer
 
-1. funkcjonalość 2 trybów - tekstowe +
-2. areas +
-3. settings menu +
-4. Zmiana koloru tekstu przy komentarzu czy dobrze czy źle +
-5. bug - można napisać liczbę, zobaczyć odpowiedź poprawną, wymazać i napisać jeszcze raz, ale dobrą +
-6. bug - przechodzą pytania z areas do operations +
-7. WORD - model heroku/model narysowac +
+Additional modes:
+1. negative numbers - add recognition of numbers with a minus sign
+2. finding integer part and remainder of division - no need for new recognition elements, just code in java
+3. order of operations - brackets 
 
-8. zaktualizowanie modelu/ flaska - żeby czytało liczby - bat - recquirements, tenserflow problemy - KAROLEK !!!! +
-9. Rozwiązać problem wywalalności się po wciśnięciu sprawdź, gdy puste pole. Dodać ifa, że jeżeli null, to też sprawdza jako źle rozwiązane zadanie +
-10. bug - w liczeniu pola prostokąta +
-11. deasign +
-12. wykres - podział klas mnista, ile jakiej cyfry +
-13. sprawdzić czy dane równe klasy +
-
-14. augmentacja - problemy z biblioteką keras - ImageDataGenerator !!!! - głupie dziadostwo!!! +
-15. augmentacja - augment +
-16. zapisywanie wygenerowanego zestawu danych +
-16. augmentacja - inne przekształcenia +
-17. zbadać czy augmentacja ma w ogóle jakiś sens, może trzeba lepiej wytrenować model + 
-18. przerobić kod, tak, żeby dało się wczytywać model z innego pliku, a wykresy z innego +
-19. co to jest baseline error - porównanie modelu z prostym modelem. Model ML powinien mieć mnieszy error niż baseline error +
-20. zmienić proporcje train_data i validation_data +
-21. statystyki: confision matrix +
-22. statystyki: accuracy, precision, recall +
-
-23. sprawdzić jaka reprezentacja obrazu w końcu, czy binary czy grayscale - lepiej, żeby było binary +
-24. zrobić żeby jak zdjęcia cyfr są dzielone, to żeby dopisaywać więcej pustego pola po bokach, bo tak normalnie mają więcej przestrzeni
-
-25. Eksport klas z javy
-26. marginesy przy wyświetlaniu treści zadania
-27. po kliknięciu niech wyświetla się nadal wynik a nie result
-28. zmienić nazwę wynik na liczba punktów
-14. rozwiazanie problemu z czekaniem na heroku
-12. problem z niedziałającymi ustawieniami
-18. zrobić zdjęcie jakie dane trafiają do modelu, potrzebne do worda. Z czarnym tłem
-19. można w sumie statystyki zrobić za pomocą sklern.metrics.classification_report
-1. opisać dokładniej MLP
-4. rozdział o modelu 
-11. dodatkowe ustawienia - np. z jakiego zakresu liczby/ poziom trudności
-12. zmienić kolor zielonego, gdy odp jest poprawna
-17. przy kliknięciu następny - uaktualniaj licznik
-14. ikonki w przyciskach
-15, responsywny paintview
-
-
-JAVA
-1. RESPONSYWNOŚĆ: czcionkę, guziki, czcionki w guzikach
-2. dodać sprawdzenie - jak po wysłaniu jest null, to komunikat o braku odpowiedzi - bug - sprawdza tylko raz
-3. bug - te zadania na pola z deltoidami i rombami - zmienić system zapobiegania przed dzieleniem nie podzielnych liczb, wstawić w tekst zmienione
-
-
-
-PYTHON
-1. być może k-fold validation
-
-WORD
-Może napisać jakie wersje Androida obsługuje. Minimalna wersja - 21(Lolipop) , target - 33 (Tiramisu)
-
- 
-dodatkowe tryby:
-1. liczby ujemne - konieczność dodania rozpoznawania liczb z minusem - zapytać Basiurki
-2. znajdowanie części całkowitej i reszty z dzielenia - nie trzeba nowych elementów rozpoznawania, tylko kod w javie
-3. kolejność wykonywania działań - nawiasy 
-4. koniecznie zrobić rozpoznawanie minusów
-
-feachery:
-1. statystyki - zapisywanie ile dobrze/wszystkie pytania z roznych kategorii, jaki poziom trudnosci
-20. dorobienie zestawu danych z 9 i jedynek, takimi, żeby miały ogonki na dole. A nie prostą linię
-2. Ekran do pisania na brudno / wysyłanie gdy kończy się pisać
-16. gumka
-15. usuwanie ostatniego elementu
+feachers:
+1. statistics - recording how many well/all questions from different categories, what level of difficulty 
+2. Making a set of data from 9 and ones, such that they have tails at the bottom. And not a straight line
+3. Screen to write dirty / send when finished writing
+4. eraser
+5. remove last element
