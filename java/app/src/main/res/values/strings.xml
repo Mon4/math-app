@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Maths for kids</string>
+    <string name="exit">wyjście</string>
+    <string name="options">Ustawienia</string>
+    <string name="operations">działania</string>
+    <string name="areas">pola figur</string>
+    <string name="text">tekstowe</string>
+    <string name="title_activity_settings" translatable="false">SettingsActivity</string>
+    <string name="start">start</string>
+
+
+    <!-- Preference Titles -->
+    <string name="messages_header" translatable="false">Messages</string>
+    <string name="sync_header" translatable="false">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title" translatable="false">Your signature</string>
+    <string name="reply_title" translatable="false">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title" translatable="false">Sync email periodically</string>
+    <string name="attachment_title" translatable="false">Download incoming attachments</string>
+    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
+
+
+    <string name="level">Poziom trudności</string>
+    <string name="difficulty_level_key" translatable="false">difficulty_level_key</string>
+    <string name="level_settings" translatable="false">Poziom trudności</string>
+    <string name="level_description" translatable="false">Zakres wyników. Im trudnieszy poziom tym większe liczby.</string>
+    <string name="default_pref_value" translatable="false">2</string>>
+
+    <string name="remind_me_for_bed_time" translatable="false">remind_me_for_bed_time</string>
+    <string name="remind_for_bed_time" translatable="false">Remind me for bed time</string>
+
+
+    <string-array name="levels">
+        <item>łatwy</item>
+        <item>średni</item>
+        <item>trudny</item>
+    </string-array>
+
+    <string-array name="pref_duration">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string name="answer">odpowiedź</string>
+    <string name="result">wynik</string>
+    <string name="clear">wyczyść</string>
+    <string name="send">wyślij</string>
+    <string name="check">sprawdź</string>
+    <string name="next">następny</string>
+    <string name="Background" translatable="false">Background color</string>
+    <string name="points">"liczba punktów: "</string>
+</resources>

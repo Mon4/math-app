@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity2">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="229dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_operations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="launchToOperations"
+            android:drawableLeft="@drawable/ic_operations"
+            android:text="@string/operations" />
+
+        <Button
+            android:id="@+id/btn_areas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="launchToAreas"
+            android:drawableLeft="@drawable/ic_areas"
+            android:text="@string/areas" />
+
+        <Button
+            android:id="@+id/btn_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="launchToText"
+            android:drawableLeft="@drawable/ic_text"
+            android:text="@string/text" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cześć całkowita" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

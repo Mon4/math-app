@@ -1,0 +1,40 @@
+x + y
+Ola miała #x cukierków i dostała #y cukierków od babci. Ile cukierków Ola ma teraz?
+x + y - z
+Jaś miał #x groszy, na urodziny dostał #y groszy, na nową zabawkę wydał #z groszy. Ile groszy ma teraz Jaś?
+x + y
+Zosia ma #x złotych. Dostała od taty jeszcze #y zł. Ile pieniędzy ma Zosia?
+x + y
+Na klombie zasadzono #x bratków niebieskich i o #y więcej bratków żółtych. Ile zasadzono żółtych bratków?
+x - y
+W poniedziałek było #x stopni, a w środę o #y stopni mniej. Jaka temperatura była w środę?  
+x + y - z
+Monika ma #x jabłek, zerwała z drzewa jeszcze #y. Wieczorem zjadła #z jabłek. Ile jabłek ma Monika? 
+x * y
+Baton kosztuje #x zł, a czekolada o #y razy więcej. Ile kosztuje czekolada? 
+x * y + z
+Smok Wielomianek kupił: #x kg pomarańczy po #y zł za kg, później jeszcze wydał #z zł na lizaka. Ile pieniędzy wydał Smok tego dnia?
+x * y 
+Stary dąb w królewskim ogrodzie ma magiczną własność. W ciągu dnia drzewo rośnie #x cm, a w nocy #y razy więcej. Ile cm rośnie w nocy? 
+x / y
+Ania ma #x lat. Jej brat Paweł jest #y razy młodszy. Ile lat ma Paweł?
+x / y
+Dziewczynki mają #x lalek, a chłopcy o #y razy mniej piłek. Ile piłek mają chłopcy?
+x / y
+Sznurek długości #x m rozcięto na dwie części. Jedna z tych części ma #y m Oblicz długość drugiej części. O ile metrów pierwsza część jest dłuższa od drugiej?
+x - y
+W zawodach brało udział #x modeli latających. W pierwszej grupie wystartowało #y modeli. Ile modeli latających czeka na start?
+x - y
+Paweł miał #x zł. Kupił piłkę za #y zł. Ile pieniędzy zostało Pawłowi?
+x + y + z
+Maja zaproponowała w szkole zawody w zbieraniu szyszek. W wyniku zbierania klasa IIIa zebrała #x kg szyszek, klasa IIIb #y kg, a klasa IIIc #z kg. Ile kg szyszek zebrały razem wszystkie 3 klasy?
+x + y - z
+Nadia lubi fotografować swoim smartfonem otaczającą przyrodę. Na sobotnim spacerze zrobiła #x zdjęć, a w niedzielę #y. Przeglądając zrobione zdjęcia, zdecydowała się skasować #z. Ile Nadia ma teraz zdjęć z weekendu?
+x + y + z
+Pani Helena uwielbia kwiaty. W jednym pokoju stoi #x kwiatów doniczkowych, a w drugim #y. Natomiast na balkonie znajduje się #z kwiatów. Ile w sumie kwiatów ma Pani Helena?
+x - y
+Darek kolekcjonuje figurki pokemonów i ma ich #x. Jeśli #y odda siostrze, a czternaście wymieni u Kuby na inne, to ile będzie miał figurek?
+x + y + z
+Jacek, Wacek i Placek rzucali strzałkami do celu. Jacek rzucił celnie #x razy, Wacek #y razy, a Placek #z razy. Ile było celnych rzutów?
+x - y - z
+Zuzia ma zapłacić za kurs tańca #x zł. Na ten cel od taty dostała #y zł, od mamy #z zł, sama musi dołożyć resztę ze swoich oszczędności. Ile pieniędzy Zusia musi mieć w swojej skarbonce?
