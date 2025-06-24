@@ -1,5 +1,5 @@
 # A mobile math learning app for elementary school using machine learning to recognize handwritten answers
-The app is based on [window app](https://github.com/Mon4/python-educational-program) which I've made earlier in python.
+The app is based on [window app](https://github.com/Mon4/python-educational-program) which I've made earlier in Python.
  
 ## Android app in Java
 You can change settings or start game. An app consists of three game modes: operation, areas and text task to choose.
@@ -13,7 +13,7 @@ In the settings, you can choose the difficulty level. The difficulty lies in the
 </br>
 
  When the answer is right, the user is informed of the right answer and receives points in the upper left corner. When the answer is wrong, the user is informed about the correct answer.
-When button "Wyślij" is pressed app sends query to server where is model to recognizing digits and app displays under task question the recognized number. When button "Sprawdź" is pressed, app checks if recognized number equals counter number by app - if answer of user is right.
+When button "Wyślij" ("Send") is pressed app sends query to server where is model to recognizing digits and app displays under task question the recognized number. When button "Sprawdź" ("Check") is pressed, app checks if recognized number equals counter number by app - if answer of user is right.
 
 Example of operational mode:
 
@@ -21,7 +21,7 @@ Example of operational mode:
 <img src="https://github.com/Mon4/Math-project/assets/44522588/923c636d-05ea-4159-aca6-75ad4ddfadb9" width="300" height="600" />
 </br>
 
-There is also an option to clear the paint view by pressing the "Wyczyść" button. And also, if the user does not want to answer a specific question, he can press the "Następny" button to move to the next question. This increases the number of questions viewed in the left corner. 
+There is also an option to clear the paint view by pressing the "Wyczyść" ("Clean up") button. And also, if the user does not want to answer a specific question, he can press the "Następny" ("Next") button to move to the next question. This increases the number of questions viewed in the left corner. 
 
 Example of fields mode:
 
