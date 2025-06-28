@@ -1,4 +1,4 @@
-# A mobile math learning app for elementary school using machine learning to recognize handwritten answers
+# Interactive math learning app for kids — combines handwriting recognition with machine learning to make math fun and intuitive.
 The app is based on [window app](https://github.com/Mon4/python-educational-program) which I've made earlier in Python.
  
 ## Android app in Java
